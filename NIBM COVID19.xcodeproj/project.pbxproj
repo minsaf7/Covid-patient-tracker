@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781BA24F0FEB1009885DD /* AppDelegate.swift */; };
-		082781BD24F0FEB1009885DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781BC24F0FEB1009885DD /* SceneDelegate.swift */; };
-		082781BF24F0FEB1009885DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781BE24F0FEB1009885DD /* ViewController.swift */; };
-		082781C224F0FEB1009885DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082781C024F0FEB1009885DD /* Main.storyboard */; };
 		082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 082781C324F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld */; };
 		082781C724F0FEB4009885DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082781C624F0FEB4009885DD /* Assets.xcassets */; };
 		082781CA24F0FEB4009885DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082781C824F0FEB4009885DD /* LaunchScreen.storyboard */; };
 		082781D524F0FEB5009885DD /* NIBM_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781D424F0FEB5009885DD /* NIBM_COVID19Tests.swift */; };
 		082781E024F0FEB5009885DD /* NIBM_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */; };
+		082781F324F10197009885DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F224F10197009885DD /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +36,6 @@
 /* Begin PBXFileReference section */
 		082781B724F0FEB1009885DD /* NIBM COVID19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM COVID19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		082781BA24F0FEB1009885DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		082781BC24F0FEB1009885DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		082781BE24F0FEB1009885DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		082781C124F0FEB1009885DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		082781C424F0FEB1009885DD /* NIBM_COVID19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NIBM_COVID19.xcdatamodel; sourceTree = "<group>"; };
 		082781C624F0FEB4009885DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082781C924F0FEB4009885DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +46,7 @@
 		082781DB24F0FEB5009885DD /* NIBM COVID19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19UITests.swift; sourceTree = "<group>"; };
 		082781E124F0FEB5009885DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082781F224F10197009885DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +97,12 @@
 		082781B924F0FEB1009885DD /* NIBM COVID19 */ = {
 			isa = PBXGroup;
 			children = (
-				082781F124F10087009885DD /* New Group1 */,
+				082781F124F10087009885DD /* Utils */,
 				082781F024F1007F009885DD /* Service */,
 				082781EF24F1004B009885DD /* Controller */,
 				082781EE24F10044009885DD /* View */,
 				082781ED24F1003C009885DD /* Model */,
 				082781BA24F0FEB1009885DD /* AppDelegate.swift */,
-				082781BC24F0FEB1009885DD /* SceneDelegate.swift */,
-				082781BE24F0FEB1009885DD /* ViewController.swift */,
-				082781C024F0FEB1009885DD /* Main.storyboard */,
 				082781C624F0FEB4009885DD /* Assets.xcassets */,
 				082781C824F0FEB4009885DD /* LaunchScreen.storyboard */,
 				082781CB24F0FEB4009885DD /* Info.plist */,
@@ -146,6 +139,7 @@
 		082781EE24F10044009885DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				082781F224F10197009885DD /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,11 +158,11 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		082781F124F10087009885DD /* New Group1 */ = {
+		082781F124F10087009885DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group1";
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +271,6 @@
 			files = (
 				082781CA24F0FEB4009885DD /* LaunchScreen.storyboard in Resources */,
 				082781C724F0FEB4009885DD /* Assets.xcassets in Resources */,
-				082781C224F0FEB1009885DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,10 +295,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				082781BF24F0FEB1009885DD /* ViewController.swift in Sources */,
+				082781F324F10197009885DD /* LoginViewController.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
-				082781BD24F0FEB1009885DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,14 +333,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		082781C024F0FEB1009885DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				082781C124F0FEB1009885DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		082781C824F0FEB4009885DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
