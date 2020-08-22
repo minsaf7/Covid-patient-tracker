@@ -10,6 +10,22 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    //MARK: Properties
+    
+    let titleLabel:UILabel={
+        let label = UILabel()
+        label.text = "NIBM COVID19"
+        label.font = UIFont(name: "Avenir-Light", size: 36)
+        label.textColor = .cyan
+        
+        return label
+        
+    }()
+    
+    
+    
+    
+    //MARK: Lifecycle
     
     
     
@@ -20,20 +36,29 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
+        configureNavigationBar()
+        view.backgroundColor = .gray
+        view.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        
+        
 
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
     }
-    */
+    
 
 }
