@@ -101,6 +101,11 @@
 		082781B924F0FEB1009885DD /* NIBM COVID19 */ = {
 			isa = PBXGroup;
 			children = (
+				082781F124F10087009885DD /* New Group1 */,
+				082781F024F1007F009885DD /* Service */,
+				082781EF24F1004B009885DD /* Controller */,
+				082781EE24F10044009885DD /* View */,
+				082781ED24F1003C009885DD /* Model */,
 				082781BA24F0FEB1009885DD /* AppDelegate.swift */,
 				082781BC24F0FEB1009885DD /* SceneDelegate.swift */,
 				082781BE24F0FEB1009885DD /* ViewController.swift */,
@@ -129,6 +134,41 @@
 				082781E124F0FEB5009885DD /* Info.plist */,
 			);
 			path = "NIBM COVID19UITests";
+			sourceTree = "<group>";
+		};
+		082781ED24F1003C009885DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		082781EE24F10044009885DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		082781EF24F1004B009885DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		082781F024F1007F009885DD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		082781F124F10087009885DD /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
