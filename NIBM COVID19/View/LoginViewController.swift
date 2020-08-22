@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "NIBM COVID19"
         label.font = UIFont(name: "Avenir-Light", size: 36)
-        label.textColor = .cyan
+        label.textColor = UIColor(white: 1, alpha:1 )
         
         return label
         
