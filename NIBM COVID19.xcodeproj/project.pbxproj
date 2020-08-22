@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781BA24F0FEB1009885DD /* AppDelegate.swift */; };
+		082781BD24F0FEB1009885DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781BC24F0FEB1009885DD /* SceneDelegate.swift */; };
+		082781BF24F0FEB1009885DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781BE24F0FEB1009885DD /* ViewController.swift */; };
+		082781C224F0FEB1009885DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082781C024F0FEB1009885DD /* Main.storyboard */; };
+		082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 082781C324F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld */; };
+		082781C724F0FEB4009885DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082781C624F0FEB4009885DD /* Assets.xcassets */; };
+		082781CA24F0FEB4009885DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082781C824F0FEB4009885DD /* LaunchScreen.storyboard */; };
+		082781D524F0FEB5009885DD /* NIBM_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781D424F0FEB5009885DD /* NIBM_COVID19Tests.swift */; };
+		082781E024F0FEB5009885DD /* NIBM_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		082781D124F0FEB5009885DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082781AF24F0FEB1009885DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082781B624F0FEB1009885DD;
+			remoteInfo = "NIBM COVID19";
+		};
+		082781DC24F0FEB5009885DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082781AF24F0FEB1009885DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082781B624F0FEB1009885DD;
+			remoteInfo = "NIBM COVID19";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		082781B724F0FEB1009885DD /* NIBM COVID19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM COVID19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		082781BA24F0FEB1009885DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		082781BC24F0FEB1009885DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		082781BE24F0FEB1009885DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		082781C124F0FEB1009885DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		082781C424F0FEB1009885DD /* NIBM_COVID19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NIBM_COVID19.xcdatamodel; sourceTree = "<group>"; };
+		082781C624F0FEB4009885DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		082781C924F0FEB4009885DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		082781CB24F0FEB4009885DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082781D024F0FEB5009885DD /* NIBM COVID19Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		082781D424F0FEB5009885DD /* NIBM_COVID19Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19Tests.swift; sourceTree = "<group>"; };
+		082781D624F0FEB5009885DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082781DB24F0FEB5009885DD /* NIBM COVID19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19UITests.swift; sourceTree = "<group>"; };
+		082781E124F0FEB5009885DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		082781B424F0FEB1009885DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082781CD24F0FEB5009885DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082781D824F0FEB5009885DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		082781AE24F0FEB1009885DD = {
+			isa = PBXGroup;
+			children = (
+				082781B924F0FEB1009885DD /* NIBM COVID19 */,
+				082781D324F0FEB5009885DD /* NIBM COVID19Tests */,
+				082781DE24F0FEB5009885DD /* NIBM COVID19UITests */,
+				082781B824F0FEB1009885DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		082781B824F0FEB1009885DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				082781B724F0FEB1009885DD /* NIBM COVID19.app */,
+				082781D024F0FEB5009885DD /* NIBM COVID19Tests.xctest */,
+				082781DB24F0FEB5009885DD /* NIBM COVID19UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		082781B924F0FEB1009885DD /* NIBM COVID19 */ = {
+			isa = PBXGroup;
+			children = (
+				082781BA24F0FEB1009885DD /* AppDelegate.swift */,
+				082781BC24F0FEB1009885DD /* SceneDelegate.swift */,
+				082781BE24F0FEB1009885DD /* ViewController.swift */,
+				082781C024F0FEB1009885DD /* Main.storyboard */,
+				082781C624F0FEB4009885DD /* Assets.xcassets */,
+				082781C824F0FEB4009885DD /* LaunchScreen.storyboard */,
+				082781CB24F0FEB4009885DD /* Info.plist */,
+				082781C324F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld */,
+			);
+			path = "NIBM COVID19";
+			sourceTree = "<group>";
+		};
+		082781D324F0FEB5009885DD /* NIBM COVID19Tests */ = {
+			isa = PBXGroup;
+			children = (
+				082781D424F0FEB5009885DD /* NIBM_COVID19Tests.swift */,
+				082781D624F0FEB5009885DD /* Info.plist */,
+			);
+			path = "NIBM COVID19Tests";
+			sourceTree = "<group>";
+		};
+		082781DE24F0FEB5009885DD /* NIBM COVID19UITests */ = {
+			isa = PBXGroup;
+			children = (
+				082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */,
+				082781E124F0FEB5009885DD /* Info.plist */,
+			);
+			path = "NIBM COVID19UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		082781B624F0FEB1009885DD /* NIBM COVID19 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082781E424F0FEB5009885DD /* Build configuration list for PBXNativeTarget "NIBM COVID19" */;
+			buildPhases = (
+				082781B324F0FEB1009885DD /* Sources */,
+				082781B424F0FEB1009885DD /* Frameworks */,
+				082781B524F0FEB1009885DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NIBM COVID19";
+			productName = "NIBM COVID19";
+			productReference = 082781B724F0FEB1009885DD /* NIBM COVID19.app */;
+			productType = "com.apple.product-type.application";
+		};
+		082781CF24F0FEB5009885DD /* NIBM COVID19Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082781E724F0FEB5009885DD /* Build configuration list for PBXNativeTarget "NIBM COVID19Tests" */;
+			buildPhases = (
+				082781CC24F0FEB5009885DD /* Sources */,
+				082781CD24F0FEB5009885DD /* Frameworks */,
+				082781CE24F0FEB5009885DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082781D224F0FEB5009885DD /* PBXTargetDependency */,
+			);
+			name = "NIBM COVID19Tests";
+			productName = "NIBM COVID19Tests";
+			productReference = 082781D024F0FEB5009885DD /* NIBM COVID19Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		082781DA24F0FEB5009885DD /* NIBM COVID19UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082781EA24F0FEB5009885DD /* Build configuration list for PBXNativeTarget "NIBM COVID19UITests" */;
+			buildPhases = (
+				082781D724F0FEB5009885DD /* Sources */,
+				082781D824F0FEB5009885DD /* Frameworks */,
+				082781D924F0FEB5009885DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082781DD24F0FEB5009885DD /* PBXTargetDependency */,
+			);
+			name = "NIBM COVID19UITests";
+			productName = "NIBM COVID19UITests";
+			productReference = 082781DB24F0FEB5009885DD /* NIBM COVID19UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		082781AF24F0FEB1009885DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Mohamed Minsaf";
+				TargetAttributes = {
+					082781B624F0FEB1009885DD = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					082781CF24F0FEB5009885DD = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 082781B624F0FEB1009885DD;
+					};
+					082781DA24F0FEB5009885DD = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 082781B624F0FEB1009885DD;
+					};
+				};
+			};
+			buildConfigurationList = 082781B224F0FEB1009885DD /* Build configuration list for PBXProject "NIBM COVID19" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 082781AE24F0FEB1009885DD;
+			productRefGroup = 082781B824F0FEB1009885DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				082781B624F0FEB1009885DD /* NIBM COVID19 */,
+				082781CF24F0FEB5009885DD /* NIBM COVID19Tests */,
+				082781DA24F0FEB5009885DD /* NIBM COVID19UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		082781B524F0FEB1009885DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082781CA24F0FEB4009885DD /* LaunchScreen.storyboard in Resources */,
+				082781C724F0FEB4009885DD /* Assets.xcassets in Resources */,
+				082781C224F0FEB1009885DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082781CE24F0FEB5009885DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082781D924F0FEB5009885DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		082781B324F0FEB1009885DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082781BF24F0FEB1009885DD /* ViewController.swift in Sources */,
+				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
+				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
+				082781BD24F0FEB1009885DD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082781CC24F0FEB5009885DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082781D524F0FEB5009885DD /* NIBM_COVID19Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082781D724F0FEB5009885DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082781E024F0FEB5009885DD /* NIBM_COVID19UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		082781D224F0FEB5009885DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082781B624F0FEB1009885DD /* NIBM COVID19 */;
+			targetProxy = 082781D124F0FEB5009885DD /* PBXContainerItemProxy */;
+		};
+		082781DD24F0FEB5009885DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082781B624F0FEB1009885DD /* NIBM COVID19 */;
+			targetProxy = 082781DC24F0FEB5009885DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		082781C024F0FEB1009885DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				082781C124F0FEB1009885DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		082781C824F0FEB4009885DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				082781C924F0FEB4009885DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		082781E224F0FEB5009885DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		082781E324F0FEB5009885DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		082781E524F0FEB5009885DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NIBM COVID19/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "minsaf.NIBM-COVID19";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		082781E624F0FEB5009885DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NIBM COVID19/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "minsaf.NIBM-COVID19";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		082781E824F0FEB5009885DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NIBM COVID19Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "minsaf.NIBM-COVID19Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIBM COVID19.app/NIBM COVID19";
+			};
+			name = Debug;
+		};
+		082781E924F0FEB5009885DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NIBM COVID19Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "minsaf.NIBM-COVID19Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIBM COVID19.app/NIBM COVID19";
+			};
+			name = Release;
+		};
+		082781EB24F0FEB5009885DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NIBM COVID19UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "minsaf.NIBM-COVID19UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NIBM COVID19";
+			};
+			name = Debug;
+		};
+		082781EC24F0FEB5009885DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NIBM COVID19UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "minsaf.NIBM-COVID19UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NIBM COVID19";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		082781B224F0FEB1009885DD /* Build configuration list for PBXProject "NIBM COVID19" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082781E224F0FEB5009885DD /* Debug */,
+				082781E324F0FEB5009885DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		082781E424F0FEB5009885DD /* Build configuration list for PBXNativeTarget "NIBM COVID19" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082781E524F0FEB5009885DD /* Debug */,
+				082781E624F0FEB5009885DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		082781E724F0FEB5009885DD /* Build configuration list for PBXNativeTarget "NIBM COVID19Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082781E824F0FEB5009885DD /* Debug */,
+				082781E924F0FEB5009885DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		082781EA24F0FEB5009885DD /* Build configuration list for PBXNativeTarget "NIBM COVID19UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082781EB24F0FEB5009885DD /* Debug */,
+				082781EC24F0FEB5009885DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		082781C324F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				082781C424F0FEB1009885DD /* NIBM_COVID19.xcdatamodel */,
+			);
+			currentVersion = 082781C424F0FEB1009885DD /* NIBM_COVID19.xcdatamodel */;
+			path = NIBM_COVID19.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 082781AF24F0FEB1009885DD /* Project object */;
+}
