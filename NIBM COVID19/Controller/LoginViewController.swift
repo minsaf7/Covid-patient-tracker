@@ -8,6 +8,16 @@
 
 import UIKit
 
+//
+//  LoginViewController.swift
+//  NIBM COVID19
+//
+//  Created by Mohamed Minsaf on 8/22/20.
+//  Copyright © 2020 Mohamed Minsaf. All rights reserved.
+//
+
+import UIKit
+
 class LoginViewController: UIViewController {
     
     //MARK: Properties

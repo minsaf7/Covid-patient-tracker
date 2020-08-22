@@ -13,8 +13,9 @@
 		082781CA24F0FEB4009885DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082781C824F0FEB4009885DD /* LaunchScreen.storyboard */; };
 		082781D524F0FEB5009885DD /* NIBM_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781D424F0FEB5009885DD /* NIBM_COVID19Tests.swift */; };
 		082781E024F0FEB5009885DD /* NIBM_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */; };
-		082781F324F10197009885DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F224F10197009885DD /* LoginViewController.swift */; };
 		082781F524F10D18009885DD /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F424F10D18009885DD /* extension.swift */; };
+		082781F724F1140C009885DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F624F1140C009885DD /* LoginViewController.swift */; };
+		082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F824F114B6009885DD /* SplashscreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,9 @@
 		082781DB24F0FEB5009885DD /* NIBM COVID19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM COVID19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		082781DF24F0FEB5009885DD /* NIBM_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_COVID19UITests.swift; sourceTree = "<group>"; };
 		082781E124F0FEB5009885DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		082781F224F10197009885DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		082781F424F10D18009885DD /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		082781F624F1140C009885DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		082781F824F114B6009885DD /* SplashscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +143,6 @@
 		082781EE24F10044009885DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				082781F224F10197009885DD /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +150,8 @@
 		082781EF24F1004B009885DD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				082781F624F1140C009885DD /* LoginViewController.swift */,
+				082781F824F114B6009885DD /* SplashscreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,9 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				082781F324F10197009885DD /* LoginViewController.swift in Sources */,
+				082781F724F1140C009885DD /* LoginViewController.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
+				082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */,
 				082781F524F10D18009885DD /* extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
