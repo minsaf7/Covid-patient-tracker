@@ -16,6 +16,7 @@
 		082781F524F10D18009885DD /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F424F10D18009885DD /* extension.swift */; };
 		082781F724F1140C009885DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F624F1140C009885DD /* LoginViewController.swift */; };
 		082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F824F114B6009885DD /* SplashscreenViewController.swift */; };
+		08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08467FB624F1707300355C5B /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		082781F424F10D18009885DD /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		082781F624F1140C009885DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		082781F824F114B6009885DD /* SplashscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenViewController.swift; sourceTree = "<group>"; };
+		08467FB624F1707300355C5B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				082781F624F1140C009885DD /* LoginViewController.swift */,
 				082781F824F114B6009885DD /* SplashscreenViewController.swift */,
+				08467FB624F1707300355C5B /* MainTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				082781F724F1140C009885DD /* LoginViewController.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
+				08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */,
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
 				082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */,
 				082781F524F10D18009885DD /* extension.swift in Sources */,
