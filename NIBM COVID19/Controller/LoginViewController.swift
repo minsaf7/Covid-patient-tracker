@@ -76,41 +76,69 @@ class LoginViewController: UIViewController {
     
     
   private lazy var emailViewContailer: UIView = {
-        let view = UIView()
-       //view.backgroundColor = .white
-       // view.anchor( height: 60, width: 200)
-        
-        view.addSubview(emailTextfield)
-   emailTextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-  //  emailTextfield.anchor( left: view.leadingAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,  paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-        
-    let textFieldSeperator = UIView()
-           textFieldSeperator.backgroundColor = .lightGray
-           view.addSubview(textFieldSeperator)
-           textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
+//        let view = UIView()
+//       //view.backgroundColor = .white
+//       // view.anchor( height: 60, width: 200)
+//
+//        view.addSubview(emailTextfield)
+//   emailTextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
+//  //  emailTextfield.anchor( left: view.leadingAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,  paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
+//
+//    let textFieldSeperator = UIView()
+//           textFieldSeperator.backgroundColor = .lightGray
+//           view.addSubview(textFieldSeperator)
+//           textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
+//
+//
+//        return view
+    
+    return UIView().inputContainerView(textField: emailTextfield as! UITextField)
     
     
-        return view
     }()
 
     
     
     private lazy var pwordViewContiner: UIView = {
-           let view = UIView()
-           //view.backgroundColor = .black
-          // view.anchor( height: 60, width: 200)
-
-           view.addSubview(pwordtextfield)
-        pwordtextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-        let textFieldSeperator = UIView()
-                  textFieldSeperator.backgroundColor = .lightGray
-                  view.addSubview(textFieldSeperator)
-                  textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
-
-           return view
+//           let view = UIView()
+//           //view.backgroundColor = .black
+//          // view.anchor( height: 60, width: 200)
+//
+//           view.addSubview(pwordtextfield)
+//        pwordtextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
+//        let textFieldSeperator = UIView()
+//                  textFieldSeperator.backgroundColor = .lightGray
+//                  view.addSubview(textFieldSeperator)
+//                  textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
+//
+//           return view
+        return UIView().inputContainerView(textField: pwordtextfield as! UITextField)
        }()
 
     
+    
+    private let loginButton: UIButton = {
+        let logButton = UIButton(type: .system)
+        logButton.setTitle("Log In", for: .normal)
+        logButton.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
+        logButton.backgroundColor = .blue
+        logButton.layer.cornerRadius = 5
+        logButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        return logButton
+    }()
+    
+    
+    
+    let dontHaveAccountButton: UIButton = {
+        let dontHaveButton = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint]))
+        
+        dontHaveButton.setAttributedTitle(attributedTitle, for: .normal)
+        return dontHaveButton
+    }()
 
     
     
@@ -134,13 +162,25 @@ class LoginViewController: UIViewController {
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 40)
         titleLabel.centerX(inView: view)
         
-       view.addSubview(emailViewContailer)
-        emailViewContailer.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20,  paddingRight: 20, height: 50)
-        
-        view.addSubview(pwordViewContiner)
-        pwordViewContiner.anchor(top: emailViewContailer.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20,  paddingRight: 20, height: 50)
+//       view.addSubview(emailViewContailer)
+//        emailViewContailer.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20,  paddingRight: 20, height: 50)
+//
+//        view.addSubview(pwordViewContiner)
+//        pwordViewContiner.anchor(top: emailViewContailer.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20,  paddingRight: 20, height: 50)
        
+        
+        
+        let inputStack = UIStackView(arrangedSubviews: [emailViewContailer,pwordViewContiner,loginButton])
+        inputStack.axis = .vertical
+        inputStack.distribution = .fillEqually
+        inputStack.spacing = 20
+        
+        view.addSubview(inputStack)
+        inputStack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor,  right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingRight: 20)
 
+        
+        view.addSubview(dontHaveAccountButton)
+        dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 10, paddingRight: 20)
     }
     
     
