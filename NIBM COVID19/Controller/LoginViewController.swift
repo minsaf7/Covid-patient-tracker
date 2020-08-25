@@ -33,37 +33,41 @@ class LoginViewController: UIViewController {
     }()
     
     let emailTextfield:UIView = {
-        let textfield = UITextField()
-       // textfield.borderStyle = .none
-      //  textfield.backgroundColor = .cyan
+//        let textfield = UITextField()
+//       // textfield.borderStyle = .none
+//      //  textfield.backgroundColor = .cyan
+//
+//        textfield.borderStyle = .none
+//               textfield.font = UIFont.systemFont(ofSize: 16)
+//               textfield.textColor = .white
+//               textfield.keyboardAppearance = .dark
+//        textfield.attributedPlaceholder = NSAttributedString(string: "EMAIL", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+//
+//
+//        return textfield
         
-        textfield.borderStyle = .none
-               textfield.font = UIFont.systemFont(ofSize: 16)
-               textfield.textColor = .white
-               textfield.keyboardAppearance = .dark
-        textfield.attributedPlaceholder = NSAttributedString(string: "EMAIL", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
-        
-        return textfield
+        return UITextField().textField(withPlaceholder: "EMAIL", isSecureTextEntry: false)
         
         
         
     }()
     
     let pwordtextfield:UIView = {
-        let pwordtextfield = UITextField()
-       // textfield.borderStyle = .none
-      //  textfield.backgroundColor = .cyan
+//        let pwordtextfield = UITextField()
+//       // textfield.borderStyle = .none
+//      //  textfield.backgroundColor = .cyan
+//
+//        pwordtextfield.borderStyle = .none
+//               pwordtextfield.font = UIFont.systemFont(ofSize: 16)
+//               pwordtextfield.textColor = .white
+//               pwordtextfield.keyboardAppearance = .dark
+//        pwordtextfield.isSecureTextEntry = true
+//        pwordtextfield.attributedPlaceholder = NSAttributedString(string: "PASSWORD", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+//
+//
+//        return pwordtextfield
         
-        pwordtextfield.borderStyle = .none
-               pwordtextfield.font = UIFont.systemFont(ofSize: 16)
-               pwordtextfield.textColor = .white
-               pwordtextfield.keyboardAppearance = .dark
-        pwordtextfield.isSecureTextEntry = true
-        pwordtextfield.attributedPlaceholder = NSAttributedString(string: "PASSWORD", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
-        
-        return pwordtextfield
+        return UITextField().textField(withPlaceholder: "PASSWORD", isSecureTextEntry: true)
         
         
         
@@ -80,6 +84,12 @@ class LoginViewController: UIViewController {
    emailTextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
   //  emailTextfield.anchor( left: view.leadingAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,  paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
         
+    let textFieldSeperator = UIView()
+           textFieldSeperator.backgroundColor = .lightGray
+           view.addSubview(textFieldSeperator)
+           textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
+    
+    
         return view
     }()
 
@@ -92,20 +102,15 @@ class LoginViewController: UIViewController {
 
            view.addSubview(pwordtextfield)
         pwordtextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-
+        let textFieldSeperator = UIView()
+                  textFieldSeperator.backgroundColor = .lightGray
+                  view.addSubview(textFieldSeperator)
+                  textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
 
            return view
        }()
-//
-//
-//    private let buttn :UIButton = {
-//
-//        let button = UIButton(type: .system)
-//         button.setTitle("Log In", for: .normal)
-//         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-//        // button.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
-//         return button
-//    }()
+
+    
 
     
     
