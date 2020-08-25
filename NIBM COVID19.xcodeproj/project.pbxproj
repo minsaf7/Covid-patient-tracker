@@ -17,6 +17,7 @@
 		082781F724F1140C009885DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F624F1140C009885DD /* LoginViewController.swift */; };
 		082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F824F114B6009885DD /* SplashscreenViewController.swift */; };
 		08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08467FB624F1707300355C5B /* MainTabBarController.swift */; };
+		084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		082781F624F1140C009885DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		082781F824F114B6009885DD /* SplashscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenViewController.swift; sourceTree = "<group>"; };
 		08467FB624F1707300355C5B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				082781F624F1140C009885DD /* LoginViewController.swift */,
 				082781F824F114B6009885DD /* SplashscreenViewController.swift */,
 				08467FB624F1707300355C5B /* MainTabBarController.swift */,
+				084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				082781F724F1140C009885DD /* LoginViewController.swift in Sources */,
+				084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */,
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,

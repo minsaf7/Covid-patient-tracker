@@ -137,6 +137,7 @@ class LoginViewController: UIViewController {
         attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint]))
         
         dontHaveButton.setAttributedTitle(attributedTitle, for: .normal)
+        dontHaveButton.addTarget(self, action: #selector(navigateToSignUP), for: .touchUpInside)
         return dontHaveButton
     }()
 
@@ -193,6 +194,14 @@ class LoginViewController: UIViewController {
     func configureNavigationBar() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
+    }
+    
+    
+ @objc  func navigateToSignUP(){
+        let viewcontroller = SignUpViewController()
+        navigationController?.pushViewController(viewcontroller, animated: true)
+        
+        
     }
     
 
