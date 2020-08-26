@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082781F824F114B6009885DD /* SplashscreenViewController.swift */; };
 		0845D84924F612AC00B2FF71 /* CustomAuthButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845D84824F612AC00B2FF71 /* CustomAuthButtonUI.swift */; };
 		0845D84B24F61ED000B2FF71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0845D84A24F61ED000B2FF71 /* GoogleService-Info.plist */; };
+		0845D84D24F6292500B2FF71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845D84C24F6292500B2FF71 /* HomeViewController.swift */; };
 		08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08467FB624F1707300355C5B /* MainTabBarController.swift */; };
 		084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */; };
 		700D8CC4E2B2D599D6EFED1F /* Pods_NIBM_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BAC6D017347D07EE7A9854 /* Pods_NIBM_COVID19.framework */; };
@@ -60,6 +61,7 @@
 		082781F824F114B6009885DD /* SplashscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenViewController.swift; sourceTree = "<group>"; };
 		0845D84824F612AC00B2FF71 /* CustomAuthButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthButtonUI.swift; sourceTree = "<group>"; };
 		0845D84A24F61ED000B2FF71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0845D84C24F6292500B2FF71 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		08467FB624F1707300355C5B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		08BAC6D017347D07EE7A9854 /* Pods_NIBM_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 				082781F824F114B6009885DD /* SplashscreenViewController.swift */,
 				08467FB624F1707300355C5B /* MainTabBarController.swift */,
 				084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */,
+				0845D84C24F6292500B2FF71 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,7 +223,6 @@
 				D3C56305801510C02EE1606F /* Pods-NIBM COVID19Tests.debug.xcconfig */,
 				0E2514DA5A2C16A2134C7A7C /* Pods-NIBM COVID19Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -468,6 +470,7 @@
 				0845D84924F612AC00B2FF71 /* CustomAuthButtonUI.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */,
+				0845D84D24F6292500B2FF71 /* HomeViewController.swift in Sources */,
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
 				082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */,
 				082781F524F10D18009885DD /* extension.swift in Sources */,

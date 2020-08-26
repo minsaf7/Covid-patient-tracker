@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class SignUpViewController: UIViewController {
 
     //MARK: - Properties
@@ -102,6 +102,7 @@ class SignUpViewController: UIViewController {
         SignButton.setTitle("Sign Up", for: .normal)
         SignButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         SignButton.backgroundColor = .black
+        SignButton.addTarget(self, action: #selector(userSignUp), for: .touchUpInside)
         
         return SignButton
     }()
@@ -167,13 +168,53 @@ class SignUpViewController: UIViewController {
        @objc func handleShowLogIn() {
            navigationController?.popViewController(animated: true)
        }
+    
+    
+    @objc func userSignUp(){
+         guard let fullName = nameTextField.text else { return }
+    
+        guard let address = addressTextField.text else { return }
+        guard let id = idTextField.text else {return}
+            guard let email = emailTextField.text else { return }
+               guard let password = pwordTextField.text else { return }
+        
+        let accountType = accountTypeSegmentedControl.selectedSegmentIndex
+        
+        
+        
+        Auth.auth().createUser(withEmail: email, password: password){
+            (result,error) in
+            if let error = error {
+                print("Faild to register user with error \(error)")
+                return
+        }
+            guard let uid = result?.user.uid else { return }
+                   
+                   let values = [
+                    "fullName": fullName,
+                    "address": address,
+                    "id":id,
+                       "email": email,
+                       
+                       
+                       "accountType": accountType
+                       ] as [String : Any]
+            
+            
+            Database.database().reference().child("users").child(uid).updateChildValues(values){ (error, ref) in
+            print("Successfuly Registerd and save data..")
+              
+    }
+      
+       
+        
 
         // Do any additional setup after loading the view.
     }
     
 
     
-    
+    }}
     
    
     

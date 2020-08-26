@@ -17,6 +17,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class LoginViewController: UIViewController {
         
     }()
     
-    let emailTextfield:UIView = {
+    let emailTextfield:UITextField = {
 //        let textfield = UITextField()
 //       // textfield.borderStyle = .none
 //      //  textfield.backgroundColor = .cyan
@@ -52,7 +53,7 @@ class LoginViewController: UIViewController {
         
     }()
     
-    let pwordtextfield:UIView = {
+    let pwordtextfield:UITextField = {
 //        let pwordtextfield = UITextField()
 //       // textfield.borderStyle = .none
 //      //  textfield.backgroundColor = .cyan
@@ -124,6 +125,7 @@ class LoginViewController: UIViewController {
         logButton.backgroundColor = .blue
         logButton.layer.cornerRadius = 5
         logButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logButton.addTarget(self, action: #selector(userSignUp), for: .touchUpOutside)
         
         return logButton
     }()
@@ -196,7 +198,7 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
     }
     
-    
+    //MARK: Selector
  @objc  func navigateToSignUP(){
         let viewcontroller = SignUpViewController()
         navigationController?.pushViewController(viewcontroller, animated: true)
@@ -204,5 +206,23 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    
+    @objc func userSignUp(){
+        
+        guard let email = emailTextfield.text else { return }
+        guard let password = pwordtextfield.text else { return }
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password){ (result, error) in
+        if let error = error {
+            print("DEBUG: Faild to log user with error \(error.localizedDescription)")
+            return
+        }
+            print("Login successfull")
+        
+    }
+    
 
+}
 }
