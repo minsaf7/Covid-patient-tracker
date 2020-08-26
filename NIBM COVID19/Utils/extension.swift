@@ -68,17 +68,27 @@ extension UIView {
     func centerX(inView view: UIView) {
     centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
        }
-    func centerY(inView view: UIView) {
+    func centerY(inView view: UIView, constant: CGFloat = 0) {
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     
-    func inputContainerView( textField: UITextField) -> UIView {
+    func inputContainerView( textField: UITextField, segentedControl: UISegmentedControl? = nil ) -> UIView {
         let view = UIView()
         
      view.addSubview(textField)
         textField.centerY(inView: view)
         textField.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
+        
+        if let segentedControl = segentedControl {
+          //  imageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: -8, paddingLeft: 8, width: 24, height: 24)
+            
+            view.addSubview(segentedControl)
+            segentedControl.anchor(left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 8, paddingRight: 8)
+            segentedControl.centerY(inView: view, constant: 8)
+        }
+        
+        
         
         let separatorView = UIView()
         separatorView.backgroundColor = .lightGray
@@ -91,6 +101,10 @@ extension UIView {
     
 
 }
+
+
+
+
 
 extension UIColor {
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat? = 1.0) -> UIColor {
