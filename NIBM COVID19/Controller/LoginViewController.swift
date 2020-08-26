@@ -125,7 +125,7 @@ class LoginViewController: UIViewController {
         logButton.backgroundColor = .blue
         logButton.layer.cornerRadius = 5
         logButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        logButton.addTarget(self, action: #selector(userSignUp), for: .touchUpOutside)
+        logButton.addTarget(self, action: #selector(userSignIn), for: .touchUpInside)
         
         return logButton
     }()
@@ -208,7 +208,7 @@ class LoginViewController: UIViewController {
     
     
     
-    @objc func userSignUp(){
+    @objc func userSignIn(){
         
         guard let email = emailTextfield.text else { return }
         guard let password = pwordtextfield.text else { return }
@@ -219,7 +219,16 @@ class LoginViewController: UIViewController {
             print("DEBUG: Faild to log user with error \(error.localizedDescription)")
             return
         }
-            print("Login successfull")
+           // print("Login successfull")
+            
+            
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: HomeViewController())
+                self.present(nav, animated: true, completion: nil)
+            }
+            
+            
+            //loginup
         
     }
     

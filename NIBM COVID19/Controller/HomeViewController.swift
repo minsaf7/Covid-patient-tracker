@@ -13,8 +13,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+       
         checkIsUserLoggedIn()
+         view.backgroundColor = .green
 
         // Do any additional setup after loading the view.
     }

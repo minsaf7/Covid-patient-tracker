@@ -21,15 +21,15 @@ class MainTabBarController: UITabBarController {
     // MARK: - Navigation
 
    func configureTabBar(){
-        let homeTab = UINavigationController(rootViewController: LoginViewController(/* change the view controller to home */ ))
+        let homeTab = UINavigationController(rootViewController: HomeViewController(/* change the view controller to home */ ))
     homeTab.tabBarItem.title = "Home"
     
     
     
-    let updateTab = UINavigationController(rootViewController: LoginViewController(/* change the view controller to update */ ))
+    let updateTab = UINavigationController(rootViewController: UpdateViewController(/* change the view controller to update */ ))
       updateTab.tabBarItem.title = "Update"
     
-    let settingTab = UINavigationController(rootViewController: LoginViewController(/* change the view controller to setting */ ))
+    let settingTab = UINavigationController(rootViewController: SettingViewController(/* change the view controller to setting */ ))
       settingTab.tabBarItem.title = "Setting"
     
     
