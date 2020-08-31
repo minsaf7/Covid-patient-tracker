@@ -13,19 +13,16 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          view.backgroundColor = .cyan
+        configureNavigationBar()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    func configureNavigationBar() {
+           navigationController?.navigationBar.isHidden = true
+           navigationController?.navigationBar.barStyle = .black
+       }
 
 }

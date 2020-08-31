@@ -8,32 +8,55 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UIViewController {
+    
+    
+    let tabBar = UITabBarController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureNavigationBar()
+      //  navigationController?.navigationBar.isHidden = true
+       // self.tabBarController?.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+       configureTabBar()
         // Do any additional setup after loading the view.
     }
     
-
     
-    // MARK: - Navigation
+    
+    // MARK: - Tab Bar
 
    func configureTabBar(){
-        let homeTab = UINavigationController(rootViewController: HomeViewController(/* change the view controller to home */ ))
+    
+    
+    
+        let homeTab = HomeViewController()
     homeTab.tabBarItem.title = "Home"
+    homeTab.tabBarItem.image = #imageLiteral(resourceName: "home30")
     
     
-    
-    let updateTab = UINavigationController(rootViewController: UpdateViewController(/* change the view controller to update */ ))
+    let updateTab =  UpdateViewController()
       updateTab.tabBarItem.title = "Update"
+    updateTab.tabBarItem.image = #imageLiteral(resourceName: "update30")
     
-    let settingTab = UINavigationController(rootViewController: SettingViewController(/* change the view controller to setting */ ))
+    let settingTab =  SettingViewController()
       settingTab.tabBarItem.title = "Setting"
+    settingTab.tabBarItem.image = #imageLiteral(resourceName: "setting30")
+    
+    
+    tabBar.viewControllers = [homeTab,updateTab,settingTab]
+    self.view.addSubview(tabBar.view)
     
     
     }
+    
+    // MARK: - Navigation
+    
+    func configureNavigationBar() {
+           navigationController?.navigationBar.isHidden = true
+           //navigationController?.navigationBar.barStyle = .black
+       }
      
      
 

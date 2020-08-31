@@ -22,6 +22,7 @@
 		0845D84F24F62F6700B2FF71 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845D84E24F62F6700B2FF71 /* UpdateViewController.swift */; };
 		0845D85124F62F7900B2FF71 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845D85024F62F7900B2FF71 /* SettingViewController.swift */; };
 		08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08467FB624F1707300355C5B /* MainTabBarController.swift */; };
+		084E62D924F77D48007E6AF6 /* LocationInputActivationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E62D824F77D48007E6AF6 /* LocationInputActivationUIView.swift */; };
 		084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */; };
 		700D8CC4E2B2D599D6EFED1F /* Pods_NIBM_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BAC6D017347D07EE7A9854 /* Pods_NIBM_COVID19.framework */; };
 		8E807A500B6D4D2662E4E334 /* Pods_NIBM_COVID19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404CA6FD4BC6111E4ADA1067 /* Pods_NIBM_COVID19Tests.framework */; };
@@ -67,6 +68,7 @@
 		0845D84E24F62F6700B2FF71 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		0845D85024F62F7900B2FF71 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		08467FB624F1707300355C5B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		084E62D824F77D48007E6AF6 /* LocationInputActivationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationUIView.swift; sourceTree = "<group>"; };
 		084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		08BAC6D017347D07EE7A9854 /* Pods_NIBM_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2514DA5A2C16A2134C7A7C /* Pods-NIBM COVID19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM COVID19Tests.release.xcconfig"; path = "Target Support Files/Pods-NIBM COVID19Tests/Pods-NIBM COVID19Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0845D84824F612AC00B2FF71 /* CustomAuthButtonUI.swift */,
+				084E62D824F77D48007E6AF6 /* LocationInputActivationUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */,
 				0845D84D24F6292500B2FF71 /* HomeViewController.swift in Sources */,
+				084E62D924F77D48007E6AF6 /* LocationInputActivationUIView.swift in Sources */,
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
 				082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */,
 				082781F524F10D18009885DD /* extension.swift in Sources */,
