@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
-        window?.rootViewController = UINavigationController(rootViewController:UpdateViewController())
+        window?.rootViewController = UINavigationController(rootViewController:SurveyViewController())
 
         
 

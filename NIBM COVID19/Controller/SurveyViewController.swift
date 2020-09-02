@@ -128,43 +128,64 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         func setupViews() {
-            myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
-            myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-            myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-            myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
+//            myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
+//            myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
+//            myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
+//            myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
             
-            self.view.addSubview(btnPrev)
-            btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
-            btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
-            btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-            btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+  // myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor ,paddingTop: 10, paddingLeft: 5,  paddingRight: 5)
             
-            self.view.addSubview(btnNext)
-            btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
-            btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
-            btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-            btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+        //  myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,right: view.rightAnchor,paddingTop: 20)
+            myCollectionView.backgroundColor = .red
+            
+            myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,height: 600)
+            
+           self.view.addSubview(btnPrev)
+//            btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
+//            btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
+//            btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
+//            btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+            
+            
+           btnPrev.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,  paddingBottom: 5, height: 50, width: 140)
+            
+            
+            
+           self.view.addSubview(btnNext)
+//            btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
+//            btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
+//            btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
+//            btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+            
+           btnNext.anchor( bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingBottom: 5, paddingRight: -10, height: 50, width: 140)
+            
+            
+            
+            
             
             self.view.addSubview(lblQueNumber)
-            lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
-            lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
-            lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
-            lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
-            lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
+//            lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
+//            lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
+//            lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
+//            lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
+ lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
+            lblQueNumber.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnPrev.topAnchor,  paddingLeft: 10, paddingBottom: 10, height: 20, width: 150)
             
             self.view.addSubview(lblScore)
-            lblScore.heightAnchor.constraint(equalTo: lblQueNumber.heightAnchor).isActive=true
-            lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
-            lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
-            lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-            lblScore.text = "Score: \(score) / \(questionsArray.count)"
+//            lblScore.heightAnchor.constraint(equalTo: lblQueNumber.heightAnchor).isActive=true
+//            lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
+//            lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
+//            lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
+           
+            lblScore.anchor(bottom: btnNext.topAnchor, right: view.rightAnchor, paddingBottom: 10, paddingRight: -30, height: 20, width: 150)
+             lblScore.text = "Score: \(score) / \(questionsArray.count)"
         }
         
         let btnPrev: UIButton = {
             let btn=UIButton()
             btn.setTitle("< Previous", for: .normal)
             btn.setTitleColor(UIColor.white, for: .normal)
-            btn.backgroundColor=UIColor.orange
+            btn.backgroundColor=UIColor.black
             btn.translatesAutoresizingMaskIntoConstraints=false
             btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
             return btn
@@ -174,7 +195,7 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
             let btn=UIButton()
             btn.setTitle("Next >", for: .normal)
             btn.setTitleColor(UIColor.white, for: .normal)
-            btn.backgroundColor=UIColor.purple
+            btn.backgroundColor=UIColor.black
             btn.translatesAutoresizingMaskIntoConstraints=false
             btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
             return btn
