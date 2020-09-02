@@ -130,7 +130,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        configureNavigationBar()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         
         
         view.addSubview(titleLabel)

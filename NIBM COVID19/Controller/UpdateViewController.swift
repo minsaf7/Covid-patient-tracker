@@ -24,11 +24,11 @@ class UpdateViewController: UIViewController {
     
     private let createSurteyurveyBtn :CustomAuthButtonUI = {
         let surveyBtn = CustomAuthButtonUI(type: .system)
-        surveyBtn.setTitle("Sign Up", for: .normal)
+        surveyBtn.setTitle("Create Survey", for: .normal)
         surveyBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         surveyBtn.backgroundColor = .black
         surveyBtn.setTitleColor(UIColor(white: 1, alpha: 1), for: .normal)
-     //   surveyBtn.addTarget(self, action: #selector, for: .touchUpInside)
+        surveyBtn.addTarget(self, action: #selector(navToSurvey), for: .touchUpInside)
         
         return surveyBtn
     }()
@@ -44,9 +44,9 @@ class UpdateViewController: UIViewController {
         temperatureBtn.setTitle("Submit temperature", for: .normal)
         temperatureBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         temperatureBtn.backgroundColor = .black
-       // temperatureBtn.
+      
         temperatureBtn.setTitleColor(UIColor(white: 1, alpha: 1), for: .normal)
-     //   surveyBtn.addTarget(self, action: #selector, for: .touchUpInside)
+  //    surveyBtn.addTarget(self, action: #selector(createSurvey), for: .touchUpInside)
         
         return temperatureBtn
     }()
@@ -81,20 +81,36 @@ class UpdateViewController: UIViewController {
         
         
         view.addSubview(createSurteyurveyBtn)
-        createSurteyurveyBtn.anchor(top: view.safeAreaLayoutGuide.topAnchor,left: view.leftAnchor,right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingRight: 20)
+   createSurteyurveyBtn.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,  right: view.rightAnchor, paddingTop: 40, paddingLeft: 20,  paddingRight: 20)
+       
         
-        let stck = UIStackView(arrangedSubviews: [tempContainer,submitTemperature])
-        view.addSubview(stck)
-        stck.axis = .vertical
-        stck.distribution = .fillEqually
-        stck.spacing = 20
-        stck.anchor(top: createSurteyurveyBtn.bottomAnchor, left: view.leftAnchor,right: view.rightAnchor, paddingTop: 80,paddingLeft: 20, paddingRight: 20)
-        //stck.centerY(inView: view)
+        let tempStack = UIStackView(arrangedSubviews: [tempContainer,submitTemperature])
+        view.addSubview(tempStack)
+        tempStack.axis = .vertical
+        
+        tempStack.distribution = .fillEqually
+        tempStack.spacing = 20
+        tempStack.anchor(top: createSurteyurveyBtn.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50, paddingLeft: 20,  paddingRight: 20)
+        
+        
+
         
         
     }
+    
+    
+    
+    //MARK: - Selector
+    
+    @objc  func navToSurvey(){
+        let vc = SurveyViewController()
+       navigationController?.pushViewController(vc, animated: true)
+    }
 
    // MARK: - Navigation
+    
+    
+  
     
     func configureNavigationBar() {
            navigationController?.navigationBar.isHidden = true

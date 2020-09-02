@@ -34,40 +34,15 @@ class LoginViewController: UIViewController {
     }()
     
     let emailTextfield:UITextField = {
-//        let textfield = UITextField()
-//       // textfield.borderStyle = .none
-//      //  textfield.backgroundColor = .cyan
-//
-//        textfield.borderStyle = .none
-//               textfield.font = UIFont.systemFont(ofSize: 16)
-//               textfield.textColor = .white
-//               textfield.keyboardAppearance = .dark
-//        textfield.attributedPlaceholder = NSAttributedString(string: "EMAIL", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-//
-//
-//        return textfield
+
         
         return UITextField().textField(withPlaceholder: "EMAIL", isSecureTextEntry: false)
-        
         
         
     }()
     
     let pwordtextfield:UITextField = {
-//        let pwordtextfield = UITextField()
-//       // textfield.borderStyle = .none
-//      //  textfield.backgroundColor = .cyan
-//
-//        pwordtextfield.borderStyle = .none
-//               pwordtextfield.font = UIFont.systemFont(ofSize: 16)
-//               pwordtextfield.textColor = .white
-//               pwordtextfield.keyboardAppearance = .dark
-//        pwordtextfield.isSecureTextEntry = true
-//        pwordtextfield.attributedPlaceholder = NSAttributedString(string: "PASSWORD", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-//
-//
-//        return pwordtextfield
-        
+
         return UITextField().textField(withPlaceholder: "PASSWORD", isSecureTextEntry: true)
         
         
@@ -77,21 +52,7 @@ class LoginViewController: UIViewController {
     
     
   private lazy var emailViewContailer: UIView = {
-//        let view = UIView()
-//       //view.backgroundColor = .white
-//       // view.anchor( height: 60, width: 200)
-//
-//        view.addSubview(emailTextfield)
-//   emailTextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-//  //  emailTextfield.anchor( left: view.leadingAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,  paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-//
-//    let textFieldSeperator = UIView()
-//           textFieldSeperator.backgroundColor = .lightGray
-//           view.addSubview(textFieldSeperator)
-//           textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
-//
-//
-//        return view
+
     
     return UIView().inputContainerView(textField: emailTextfield as! UITextField)
     
@@ -101,18 +62,7 @@ class LoginViewController: UIViewController {
     
     
     private lazy var pwordViewContiner: UIView = {
-//           let view = UIView()
-//           //view.backgroundColor = .black
-//          // view.anchor( height: 60, width: 200)
-//
-//           view.addSubview(pwordtextfield)
-//        pwordtextfield.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
-//        let textFieldSeperator = UIView()
-//                  textFieldSeperator.backgroundColor = .lightGray
-//                  view.addSubview(textFieldSeperator)
-//                  textFieldSeperator.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
-//
-//           return view
+
         return UIView().inputContainerView(textField: pwordtextfield as! UITextField)
        }()
 
@@ -122,7 +72,7 @@ class LoginViewController: UIViewController {
         let logButton = UIButton(type: .system)
         logButton.setTitle("Log In", for: .normal)
         logButton.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
-        logButton.backgroundColor = .blue
+        logButton.backgroundColor = .black
         logButton.layer.cornerRadius = 5
         logButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         logButton.addTarget(self, action: #selector(userSignIn), for: .touchUpInside)
@@ -158,8 +108,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         configureNavigationBar()
-       // view.backgroundColor = .gray
-        view.backgroundColor = UIColor.init(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+        view.backgroundColor = .white
+       // view.backgroundColor = UIColor.init(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
         view.addSubview(titleLabel)
         
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 40)
