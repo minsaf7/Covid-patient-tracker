@@ -25,19 +25,19 @@ class SurveyResultViewController: UIViewController {
             guard let sc = score, let tc = totalScore else { return }
             let s = sc * 100 / tc
             if s < 10 {
-                rating = "Poor"
+                rating = "You are not infected"
                 color = UIColor.darkGray
             }  else if s < 40 {
-                rating = "Average"
+                rating = "You are not infected"
                 color = UIColor.blue
             } else if s < 60 {
-                rating = "Good"
+                rating = "You are not infected"
                 color = UIColor.yellow
             } else if s < 80 {
-                rating = "Excellent"
+                rating = "You are infected"
                 color = UIColor.red
             } else if s <= 100 {
-                rating = "Outstanding"
+                rating = "You are infected"
                 color = UIColor.orange
             }
             lblRating.text = "\(rating)"
@@ -45,7 +45,8 @@ class SurveyResultViewController: UIViewController {
         }
         
         @objc func btnRestartAction() {
-            self.navigationController?.popToRootViewController(animated: true)
+            let vc = UpdateViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         func setupViews() {
@@ -56,17 +57,22 @@ class SurveyResultViewController: UIViewController {
             lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true
             
             self.view.addSubview(lblScore)
-            lblScore.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 0).isActive=true
-            lblScore.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-            lblScore.widthAnchor.constraint(equalToConstant: 150).isActive=true
-            lblScore.heightAnchor.constraint(equalToConstant: 60).isActive=true
+            lblScore.anchor(top: lblTitle.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20,  paddingRight: 20)
+            
+//            lblScore.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 0).isActive=true
+//            lblScore.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+//            lblScore.widthAnchor.constraint(equalToConstant: 150).isActive=true
+//            lblScore.heightAnchor.constraint(equalToConstant: 60).isActive=true
             lblScore.text = "\(score!) / \(totalScore!)"
+            lblScore.textColor = .white
             
             self.view.addSubview(lblRating)
-            lblRating.topAnchor.constraint(equalTo: lblScore.bottomAnchor, constant: 40).isActive=true
-            lblRating.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-            lblRating.widthAnchor.constraint(equalToConstant: 150).isActive=true
-            lblRating.heightAnchor.constraint(equalToConstant: 60).isActive=true
+            lblRating.anchor(top: lblScore.bottomAnchor, paddingTop: 50, width: 300)
+            lblRating.centerX(inView: self.view)
+//            lblRating.topAnchor.constraint(equalTo: lblScore.bottomAnchor, constant: 40).isActive=true
+//            lblRating.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+//            lblRating.widthAnchor.constraint(equalToConstant: 150).isActive=true
+//            lblRating.heightAnchor.constraint(equalToConstant: 60).isActive=true
             showRating()
             
             self.view.addSubview(btnRestart)
@@ -103,7 +109,7 @@ class SurveyResultViewController: UIViewController {
             lbl.text="Good"
             lbl.textColor=UIColor.black
             lbl.textAlignment = .center
-            lbl.font = UIFont.boldSystemFont(ofSize: 24)
+            lbl.font = UIFont.boldSystemFont(ofSize: 16)
             lbl.translatesAutoresizingMaskIntoConstraints=false
             return lbl
         }()

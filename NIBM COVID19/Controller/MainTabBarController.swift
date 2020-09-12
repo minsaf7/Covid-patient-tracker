@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabBarController: UIViewController {
     
@@ -16,6 +17,8 @@ class MainTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
+        
+        checkIsUserLoggedIn()
       //  navigationController?.navigationBar.isHidden = true
        // self.tabBarController?.navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -57,6 +60,37 @@ class MainTabBarController: UIViewController {
            navigationController?.navigationBar.isHidden = true
            //navigationController?.navigationBar.barStyle = .black
        }
+    
+    
+    //MARK: = API
+         
+            func checkIsUserLoggedIn() {
+                if(Auth.auth().currentUser?.uid == nil) {
+    
+                    DispatchQueue.main.async {
+                         let nav = UINavigationController(rootViewController: LoginViewController())
+                        self.present(nav, animated: true, completion: nil)
+    
+    
+                        self.dismiss(animated: true, completion: nil)
+                    }
+    
+    
+    
+    
+    
+                } else {
+                    print("DEBUG: User is logged in..")
+                }
+            }
+            
+            func signOut() {
+                do {
+                    try Auth.auth().signOut()
+                } catch {
+                    print("DEBUG: sign out error")
+                }
+            }
      
      
 

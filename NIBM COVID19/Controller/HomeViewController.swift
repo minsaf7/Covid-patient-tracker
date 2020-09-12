@@ -9,14 +9,14 @@
 import UIKit
 import Firebase
 import MapKit
-//import LocationInputActivationUIView
+
 
 class HomeViewController: UIViewController {
     
     
     //MARK: Properties
-   // private  let loc = LocationInputActivationUIViev()
-    private let covidMap = MKMapView()
+  
+    private let userMap = MKMapView()
             
     
     
@@ -27,15 +27,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        view.addSubview(covidMap)
-        covidMap.frame = view.frame
+        view.addSubview(userMap)
+        userMap.frame = view.frame
         
-        
-       
-     //   checkIsUserLoggedIn()
-         
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -49,35 +43,7 @@ class HomeViewController: UIViewController {
           // navigationController?.navigationBar.barStyle = .black
        }
 
-    //MARK: API
-        
-//        func checkIsUserLoggedIn() {
-//            if(Auth.auth().currentUser?.uid == nil) {
-//
-//                DispatchQueue.main.async {
-//                     let nav = UINavigationController(rootViewController: LoginViewController())
-//                    self.present(nav, animated: true, completion: nil)
-//
-//
-//                    self.dismiss(animated: true, completion: nil)
-//                }
-//
-//
-//
-//
-//
-//            } else {
-//                print("DEBUG: User is logged in..")
-//            }
-//        }
-        
-//        func signOut() {
-//            do {
-//                try Auth.auth().signOut()
-//            } catch {
-//                print("DEBUG: sign out error")
-//            }
-//        }
+   
     }
 
 

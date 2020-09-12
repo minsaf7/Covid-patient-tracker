@@ -76,7 +76,8 @@ var btn1: UIButton!
 //        lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
 //        lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
         
-        lblQue.anchor(top:self.safeAreaLayoutGuide.topAnchor , left: self.leftAnchor, right: self.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingRight: -20)
+        lblQue.anchor(top:self.safeAreaLayoutGuide.topAnchor,   paddingTop: 200)
+        lblQue.centerX(inView: self)
         
 //        let btnWidth: CGFloat = 150
 //        let btnHeight: CGFloat = 50
@@ -96,11 +97,12 @@ var btn1: UIButton!
         
         btnStack = UIStackView(arrangedSubviews: [btn1,btn2])
     addSubview(btnStack)
-        btnStack.axis = .vertical
+        btnStack.axis = .horizontal
         btnStack.distribution = .fillEqually
-        btnStack.spacing = 20
+        btnStack.spacing = 15
        // btnStack.anchor(left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingLeft: 20, paddingBottom: 10, paddingRight: -20)
-        btnStack.anchor(top: lblQue.bottomAnchor, left: self.leftAnchor, right: self.rightAnchor, paddingTop: 50, paddingLeft: 20, paddingRight: -20)
+        btnStack.anchor(top: lblQue.bottomAnchor,  paddingTop: 50,height: 50, width: 300)
+        btnStack.centerX(inView: self)
         
 //        btn3 = getButton(tag: 2)
 //        addSubview(btn3)

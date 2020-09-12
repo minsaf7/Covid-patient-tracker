@@ -56,13 +56,13 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que2 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que3 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que4 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que5 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que6 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        questionsArray = [que1, que2, que3, que4, que5, que6]
+        let que1 = Question( questionText: "Do you have breathing difficulties or fever ?", options: ["Yes", "No"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que2 = Question( questionText: "Have you been travelling inbetween last 14 days?", options: ["Yes", "No"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que3 = Question( questionText: "Have you been exposed to large crowds ?", options: ["Yes", "No"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que4 = Question( questionText: "Did you interacted with any sick person?", options: ["Yes", "No"], correctAns: 0, wrongAns: -1, isAnswered: false)
+//        let que5 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 0, wrongAns: -1, isAnswered: false)
+//        let que6 = Question( questionText: "Do you have any covid symptoms ?", options: ["Yes", "No"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        questionsArray = [que1, que2, que3, que4]
         
         setupViews()
         
@@ -136,49 +136,57 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
   // myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor ,paddingTop: 10, paddingLeft: 5,  paddingRight: 5)
             
         //  myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,right: view.rightAnchor,paddingTop: 20)
-            myCollectionView.backgroundColor = .red
+            myCollectionView.backgroundColor = .white
             
             myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,height: 600)
             
-           self.view.addSubview(btnPrev)
+            
+            
+
+                        self.view.addSubview(lblQueNumber)
+            //            lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
+            //            lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
+            //            lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
+            //            lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
+           
+            
+          self.view.addSubview(btnPrev)
 //            btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
 //            btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
 //            btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
 //            btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
             
             
-           btnPrev.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,  paddingBottom: 5, height: 50, width: 140)
+         btnPrev.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,  paddingBottom: 5, height: 50, width: 140)
             
             
             
-           self.view.addSubview(btnNext)
+          self.view.addSubview(btnNext)
 //            btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
 //            btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
 //            btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
 //            btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
             
-           btnNext.anchor( bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingBottom: 5, paddingRight: -10, height: 50, width: 140)
+        btnNext.anchor( bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingBottom: 5, paddingRight: -10, height: 50, width: 140)
             
+//           let btnStack = UIStackView(arrangedSubviews: [btnPrev,btnNext])
+//            btnStack.axis = .horizontal
+//            btnStack.distribution = .fillEqually
+//            btnStack.spacing = 20
+//            btnStack.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 5, paddingBottom: 10, paddingRight: 5)
             
+            lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
+                                  lblQueNumber.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnPrev.topAnchor,  paddingLeft: 10, paddingBottom: 10, height: 20, width: 150)
+                                  
+                                  self.view.addSubview(lblScore)
+                      //            lblScore.heightAnchor.constraint(equalTo: lblQueNumber.heightAnchor).isActive=true
+                      //            lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
+                      //            lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
+                      //            lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
+                                 
+                                  lblScore.anchor(bottom: btnNext.topAnchor, right: view.rightAnchor, paddingBottom: 10, paddingRight: -30, height: 20, width: 150)
+                                   lblScore.text = "Score: \(score) / \(questionsArray.count)"
             
-            
-            
-            self.view.addSubview(lblQueNumber)
-//            lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
-//            lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//            lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
-//            lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
- lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
-            lblQueNumber.anchor(left: view.safeAreaLayoutGuide.leftAnchor, bottom: btnPrev.topAnchor,  paddingLeft: 10, paddingBottom: 10, height: 20, width: 150)
-            
-            self.view.addSubview(lblScore)
-//            lblScore.heightAnchor.constraint(equalTo: lblQueNumber.heightAnchor).isActive=true
-//            lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
-//            lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
-//            lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-           
-            lblScore.anchor(bottom: btnNext.topAnchor, right: view.rightAnchor, paddingBottom: 10, paddingRight: -30, height: 20, width: 150)
-             lblScore.text = "Score: \(score) / \(questionsArray.count)"
         }
         
         let btnPrev: UIButton = {
@@ -229,7 +237,7 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
             questionsArray[index.item].isAnswered=true
             if questionsArray[index.item].correctAns != btnIndex {
                 questionsArray[index.item].wrongAns = btnIndex
-                score -= 1
+                score -= 0
             } else {
                 score += 1
             }

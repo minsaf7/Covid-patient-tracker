@@ -81,8 +81,8 @@ class UpdateViewController: UIViewController {
         
         
         view.addSubview(createSurteyurveyBtn)
-   createSurteyurveyBtn.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,  right: view.rightAnchor, paddingTop: 40, paddingLeft: 20,  paddingRight: 20)
-       
+   createSurteyurveyBtn.anchor(top: view.safeAreaLayoutGuide.topAnchor,  paddingTop: 40, width: 300)
+        createSurteyurveyBtn.centerX(inView: view)
         
         let tempStack = UIStackView(arrangedSubviews: [tempContainer,submitTemperature])
         view.addSubview(tempStack)
@@ -90,7 +90,8 @@ class UpdateViewController: UIViewController {
         
         tempStack.distribution = .fillEqually
         tempStack.spacing = 20
-        tempStack.anchor(top: createSurteyurveyBtn.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50, paddingLeft: 20,  paddingRight: 20)
+        tempStack.anchor(top: createSurteyurveyBtn.bottomAnchor,  paddingTop: 50, width: 300)
+        tempStack.centerX(inView: view)
         
         
 

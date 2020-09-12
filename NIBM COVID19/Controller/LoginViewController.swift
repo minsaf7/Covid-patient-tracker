@@ -173,8 +173,9 @@ class LoginViewController: UIViewController {
             
             
             DispatchQueue.main.async {
-                let nav = UINavigationController(rootViewController: HomeViewController())
-                self.present(nav, animated: true, completion: nil)
+                let nav = UINavigationController(rootViewController: MainTabBarController())
+            //  self.present(nav, animated: false, completion: nil)
+                self.navigationController?.pushViewController(nav, animated: true)
             }
             
             

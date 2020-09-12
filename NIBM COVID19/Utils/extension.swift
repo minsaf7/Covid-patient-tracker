@@ -17,7 +17,7 @@ extension UITextField {
         let txtFields = UITextField()
         txtFields.borderStyle = .none
         txtFields.font = UIFont.systemFont(ofSize: 16)
-        txtFields.textColor = .white
+        txtFields.textColor = .black
         txtFields.keyboardAppearance = .dark
         txtFields.isSecureTextEntry = isSecureTextEntry
         txtFields.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -108,7 +108,7 @@ extension UIView {
         
         
         let separatorView = UIView()
-        separatorView.backgroundColor = .lightGray
+        separatorView.backgroundColor = .black
         view.addSubview(separatorView)
         separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.75)
         

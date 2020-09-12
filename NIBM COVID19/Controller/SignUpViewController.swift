@@ -134,7 +134,7 @@ class SignUpViewController: UIViewController {
         
         
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 80, paddingLeft: 20,  paddingRight:20)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20,  paddingRight:20)
         titleLabel.centerX(inView: view)
         
         
@@ -144,7 +144,8 @@ class SignUpViewController: UIViewController {
         inputStack.spacing = 20
         
         view.addSubview(inputStack)
-        inputStack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50, paddingLeft: 20,  paddingRight: 20)
+        inputStack.anchor(top: titleLabel.bottomAnchor,  paddingTop: 20, width: 300)
+        inputStack.centerX(inView: view)
         
         
         view.addSubview(alreadyHaveAccountButton)
