@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UpdateViewController: UIViewController {
 
@@ -68,9 +69,9 @@ class UpdateViewController: UIViewController {
         view.backgroundColor = .white
        configureNavigationBar()
         
-      
-        
-    configureUI()
+     // checkIsUserLoggedIn()
+      configureUI()
+   
 
         // Do any additional setup after loading the view.
     }
@@ -104,8 +105,16 @@ class UpdateViewController: UIViewController {
     //MARK: - Selector
     
     @objc  func navToSurvey(){
+        
+         print("DEBUG: Clicked..")
+//        let vc = SurveyViewController()
+//       navigationController?.pushViewController(vc, animated: true)
         let vc = SurveyViewController()
-       navigationController?.pushViewController(vc, animated: true)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: false)
+        
+        
+        
     }
 
    // MARK: - Navigation
@@ -117,5 +126,34 @@ class UpdateViewController: UIViewController {
            navigationController?.navigationBar.isHidden = true
            navigationController?.navigationBar.barStyle = .black
        }
+    
+    
+    func checkIsUserLoggedIn() {
+                    if(Auth.auth().currentUser?.uid == nil) {
+        
+    //                    DispatchQueue.main.async {
+    //                         let nav = UINavigationController(rootViewController: LoginViewController())
+    //                        self.present(nav, animated: true, completion: nil)
+    //
+    //
+    //                        self.dismiss(animated: true, completion: nil)
+    //                    }
+                        DispatchQueue.main.async {
+                                                          let nav = UINavigationController(rootViewController: LoginViewController())
+                                                          nav.modalPresentationStyle = .fullScreen
+                                                          self.present(nav, animated: true, completion: nil)
+                                                      }
+        
+        
+        
+        
+        
+                    } else {
+                        print("DEBUG: User is logged in..")
+                        
+                     configureUI()
+                        
+                    }
+                }
 
 }

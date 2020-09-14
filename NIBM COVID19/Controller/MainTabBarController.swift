@@ -9,10 +9,10 @@
 import UIKit
 import Firebase
 
-class MainTabBarController: UIViewController {
+class MainTabBarController: UITabBarController {
     
     
-    let tabBar = UITabBarController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class MainTabBarController: UIViewController {
       //  navigationController?.navigationBar.isHidden = true
        // self.tabBarController?.navigationController?.setNavigationBarHidden(true, animated: true)
         
-       configureTabBar()
+      // configureTabBar()
         // Do any additional setup after loading the view.
     }
     
@@ -48,9 +48,8 @@ class MainTabBarController: UIViewController {
     settingTab.tabBarItem.image = #imageLiteral(resourceName: "setting30")
     
     
-    tabBar.viewControllers = [homeTab,updateTab,settingTab]
-    self.view.addSubview(tabBar.view)
-    
+   viewControllers = [homeTab,updateTab,settingTab]
+   // view.addSubview(vie)
     
     }
     
@@ -67,13 +66,18 @@ class MainTabBarController: UIViewController {
             func checkIsUserLoggedIn() {
                 if(Auth.auth().currentUser?.uid == nil) {
     
+//                    DispatchQueue.main.async {
+//                         let nav = UINavigationController(rootViewController: LoginViewController())
+//                        self.present(nav, animated: true, completion: nil)
+//
+//
+//                        self.dismiss(animated: true, completion: nil)
+//                    }
                     DispatchQueue.main.async {
-                         let nav = UINavigationController(rootViewController: LoginViewController())
-                        self.present(nav, animated: true, completion: nil)
-    
-    
-                        self.dismiss(animated: true, completion: nil)
-                    }
+                                                      let nav = UINavigationController(rootViewController: LoginViewController())
+                                                      nav.modalPresentationStyle = .fullScreen
+                                                      self.present(nav, animated: true, completion: nil)
+                                                  }
     
     
     
@@ -81,6 +85,9 @@ class MainTabBarController: UIViewController {
     
                 } else {
                     print("DEBUG: User is logged in..")
+                    
+                    configureTabBar()
+                    
                 }
             }
             

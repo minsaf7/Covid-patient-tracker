@@ -172,11 +172,23 @@ class LoginViewController: UIViewController {
            // print("Login successfull")
             
             
-            DispatchQueue.main.async {
-                let nav = UINavigationController(rootViewController: MainTabBarController())
-            //  self.present(nav, animated: false, completion: nil)
-                self.navigationController?.pushViewController(nav, animated: true)
-            }
+//            DispatchQueue.main.async {
+//                let nav = UINavigationController(rootViewController: HomeViewController())
+//            //  self.present(nav, animated: false, completion: nil)
+//                self.navigationController?.pushViewController(nav, animated: true)
+//            }
+            let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+            
+            guard let controller = keyWindow?.rootViewController as? MainTabBarController else { return }
+            controller.configureTabBar()
+            self.dismiss(animated: true, completion: nil)
+            
+            print("DEBUG: Button clicked")
             
             
             //loginup

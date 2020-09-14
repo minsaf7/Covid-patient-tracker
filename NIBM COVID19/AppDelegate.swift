@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
-        window?.rootViewController = UINavigationController(rootViewController:SignUpViewController())
+        window?.rootViewController = UINavigationController(rootViewController:MainTabBarController())
 
         
 
