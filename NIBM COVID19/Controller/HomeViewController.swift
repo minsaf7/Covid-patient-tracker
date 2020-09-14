@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
   
     private let userMap = MKMapView()
     private let locationManager = CLLocationManager()
+    private let inputActivationUIView = LocationInputActivationUIView ()
             
     
     
@@ -27,7 +28,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
+       
      checkIsUserLoggedIn()
       //  signOut()
         
@@ -36,6 +37,24 @@ class HomeViewController: UIViewController {
 
     
     // MARK: - Configuring UI
+    
+    func configureUI(){
+         configureNavigationBar()
+        setMap()
+        view.addSubview(inputActivationUIView)
+        inputActivationUIView.centerX(inView: view)
+        inputActivationUIView.setDimensions(height: 50, width: view.frame.width - 64)
+        inputActivationUIView.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 20)
+        
+        inputActivationUIView.alpha = 0
+        
+        UIView.animate(withDuration: 2) {
+            self.inputActivationUIView.alpha = 1
+        }
+        
+       
+    }
+    
     
     func setMap(){
         
@@ -52,6 +71,11 @@ class HomeViewController: UIViewController {
            navigationController?.navigationBar.isHidden = true
           // navigationController?.navigationBar.barStyle = .black
        }
+    
+    
+    // MARK: - Selectors
+    
+   
     
     
     
@@ -77,7 +101,8 @@ class HomeViewController: UIViewController {
        
                    } else {
                        print("DEBUG: User is logged in..")
-                     setMap()
+                    // setMap()
+                    configureUI()
                     
                    }
                }
@@ -163,3 +188,8 @@ extension HomeViewController : CLLocationManagerDelegate{
 
 }
 
+extension HomeViewController: LocationInputActivationUIViewDelegate {
+    func presentLocationInputView() {
+        print("DEBUG: LocationInputActivationUIViewDelegate called")
+    }
+}
