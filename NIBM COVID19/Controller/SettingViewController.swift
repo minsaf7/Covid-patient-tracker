@@ -22,7 +22,7 @@ class SettingViewController: UIViewController {
        }()
     
     
-    private let profileTile: UIButton = {
+    private let profileButtonContainer: UIButton = {
            let tile = UIButton()
            tile.backgroundColor = .white
            
@@ -55,7 +55,7 @@ class SettingViewController: UIViewController {
        }()
     
     
-    private let contactTile: UIButton = {
+    private let contactButtonContainer: UIButton = {
            let tile = UIButton()
            tile.backgroundColor = .white
            
@@ -86,7 +86,7 @@ class SettingViewController: UIViewController {
            return tile
        }()
     
-    private let shareTile: UIButton = {
+    private let shareButtonContainer: UIButton = {
            let tile = UIButton()
            tile.backgroundColor = .white
            
@@ -148,13 +148,13 @@ class SettingViewController: UIViewController {
         titleLbl.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
         titleLbl.centerX(inView: view)
         
-        let stack = UIStackView(arrangedSubviews: [profileTile, contactTile, shareTile])
+        let stack = UIStackView(arrangedSubviews: [profileButtonContainer, contactButtonContainer, shareButtonContainer])
               stack.axis = .vertical
               stack.distribution = .fillProportionally
               stack.spacing = 0
         
         view.addSubview(stack)
-        stack.anchor(top: titleLbl.bottomAnchor,  paddingTop: 20, height: 210,width: 375)
+        stack.anchor(top: titleLbl.bottomAnchor,  paddingTop: 20, height: 210,width: 370)
         stack.centerX(inView: view)
         
         view.addSubview(logoutButton)
