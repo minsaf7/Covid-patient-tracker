@@ -12,32 +12,32 @@ import MapKit
 
 
 class HomeViewController: UIViewController {
-    
-    
+
+
     //MARK: Properties
-  
+
     private let userMap = MKMapView()
     private let locationManager = CLLocationManager()
     private let inputActivationUIView = LocationInputActivationUIView ()
-            
-    
-    
-    
-    
-    
+
+
+
+
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+
      checkIsUserLoggedIn()
       //  signOut()
-        
-    }
-    
 
-    
+    }
+
+
+
     // MARK: - Configuring UI
-    
+
     func configureUI(){
          configureNavigationBar()
         setMap()
@@ -45,43 +45,43 @@ class HomeViewController: UIViewController {
         inputActivationUIView.centerX(inView: view)
         inputActivationUIView.setDimensions(height: 50, width: view.frame.width - 64)
         inputActivationUIView.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 20)
-        
+
         inputActivationUIView.alpha = 0
-        
+
         UIView.animate(withDuration: 2) {
             self.inputActivationUIView.alpha = 1
         }
-        
-       
+
+
     }
-    
-    
+
+
     func setMap(){
-        
+
         view.addSubview(userMap)
                userMap.frame = view.frame
-        
+
         userMap.showsUserLocation = true
         userMap.userTrackingMode = .follow
     }
-    
+
     // MARK: - Navigation
-    
+
     func configureNavigationBar() {
            navigationController?.navigationBar.isHidden = true
           // navigationController?.navigationBar.barStyle = .black
        }
-    
-    
+
+
     // MARK: - Selectors
-    
-   
-    
-    
-    
+
+
+
+
+
     func checkIsUserLoggedIn() {
                    if(Auth.auth().currentUser?.uid == nil) {
-       
+
 //                       DispatchQueue.main.async {
 //                            let nav = UINavigationController(rootViewController: LoginViewController())
 //                           self.present(nav, animated: true, completion: nil)
@@ -94,23 +94,23 @@ class HomeViewController: UIViewController {
                                    nav.modalPresentationStyle = .fullScreen
                                    self.present(nav, animated: true, completion: nil)
                                }
-       
-       
-       
-       
-       
+
+
+
+
+
                    } else {
                        print("DEBUG: User is logged in..")
                     // setMap()
                     configureUI()
-                    
+
                    }
                }
 
-    
-    
-    
-    
+
+
+
+
     func signOut() {
                   do {
                       try Auth.auth().signOut()
@@ -118,15 +118,15 @@ class HomeViewController: UIViewController {
                       print("DEBUG: sign out error")
                   }
               }
-       
-    
-    
-    
-    
-    
-    
-    
-   
+
+
+
+
+
+
+
+
+
     }
 
 //MARK: - Location services
@@ -193,3 +193,10 @@ extension HomeViewController: LocationInputActivationUIViewDelegate {
         print("DEBUG: LocationInputActivationUIViewDelegate called")
     }
 }
+
+
+
+
+
+// new
+

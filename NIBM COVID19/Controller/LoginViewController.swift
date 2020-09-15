@@ -174,7 +174,7 @@ class LoginViewController: UIViewController {
             
 //            DispatchQueue.main.async {
 //                let nav = UINavigationController(rootViewController: HomeViewController())
-//            //  self.present(nav, animated: false, completion: nil)
+//            //  self.present(nav, animated/Users/mohamedminsaf/Desktop/coursework/NIBM COVID19/NIBM COVID19/Controller/LoginViewController.swift: false, completion: nil)
 //                self.navigationController?.pushViewController(nav, animated: true)
 //            }
             let keyWindow = UIApplication.shared.connectedScenes

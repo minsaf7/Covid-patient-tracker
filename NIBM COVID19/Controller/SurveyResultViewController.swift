@@ -26,26 +26,26 @@ class SurveyResultViewController: UIViewController {
             let s = sc * 100 / tc
             if s < 10 {
                 rating = "You are not infected"
-                color = UIColor.darkGray
+                color = UIColor.green
             }  else if s < 40 {
                 rating = "You are not infected"
-                color = UIColor.blue
+                color = UIColor.green
             } else if s < 60 {
                 rating = "You are not infected"
-                color = UIColor.yellow
+                color = UIColor.green
             } else if s < 80 {
                 rating = "You are infected"
                 color = UIColor.red
             } else if s <= 100 {
                 rating = "You are infected"
-                color = UIColor.orange
+                color = UIColor.red
             }
             lblRating.text = "\(rating)"
             lblRating.textColor=color
         }
         
         @objc func btnRestartAction() {
-            let vc = UpdateViewController()
+            let vc = MainTabBarController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -116,7 +116,7 @@ class SurveyResultViewController: UIViewController {
         
         let btnRestart: UIButton = {
             let btn = UIButton()
-            btn.setTitle("Restart", for: .normal)
+            btn.setTitle("Go to Home", for: .normal)
             btn.setTitleColor(UIColor.white, for: .normal)
             btn.backgroundColor=UIColor.orange
             btn.layer.cornerRadius=5
