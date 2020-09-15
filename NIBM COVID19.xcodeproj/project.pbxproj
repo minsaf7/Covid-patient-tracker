@@ -29,6 +29,7 @@
 		0852563724FE4D0100543AE4 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */; };
 		0852563924FE50F800543AE4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852563824FE50F800543AE4 /* SurveyResultViewController.swift */; };
 		0859B91D24FE3DE800BD84EA /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B91C24FE3DE800BD84EA /* SurveyViewController.swift */; };
+		08628A2B2510DDBC007B070E /* SafeActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08628A2A2510DDBC007B070E /* SafeActionViewController.swift */; };
 		700D8CC4E2B2D599D6EFED1F /* Pods_NIBM_COVID19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BAC6D017347D07EE7A9854 /* Pods_NIBM_COVID19.framework */; };
 		8E807A500B6D4D2662E4E334 /* Pods_NIBM_COVID19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404CA6FD4BC6111E4ADA1067 /* Pods_NIBM_COVID19Tests.framework */; };
 		9826394BBDAC26B0EDEB9218 /* Pods_NIBM_COVID19_NIBM_COVID19UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7D0D43881A36106CDBF410 /* Pods_NIBM_COVID19_NIBM_COVID19UITests.framework */; };
@@ -80,6 +81,7 @@
 		0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0852563824FE50F800543AE4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
 		0859B91C24FE3DE800BD84EA /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		08628A2A2510DDBC007B070E /* SafeActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionViewController.swift; sourceTree = "<group>"; };
 		08BAC6D017347D07EE7A9854 /* Pods_NIBM_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2514DA5A2C16A2134C7A7C /* Pods-NIBM COVID19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM COVID19Tests.release.xcconfig"; path = "Target Support Files/Pods-NIBM COVID19Tests/Pods-NIBM COVID19Tests.release.xcconfig"; sourceTree = "<group>"; };
 		404CA6FD4BC6111E4ADA1067 /* Pods_NIBM_COVID19Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBM_COVID19Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 				0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */,
 				0852563824FE50F800543AE4 /* SurveyResultViewController.swift */,
 				084B825B2510C38800F7C951 /* ProfileViewController.swift */,
+				08628A2A2510DDBC007B070E /* SafeActionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */,
 				0845D84924F612AC00B2FF71 /* CustomAuthButtonUI.swift in Sources */,
 				0852563724FE4D0100543AE4 /* SurveyCollectionViewCell.swift in Sources */,
+				08628A2B2510DDBC007B070E /* SafeActionViewController.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				084912B9250F3D06004BED49 /* LocationInputView.swift in Sources */,
 				084B825C2510C38800F7C951 /* ProfileViewController.swift in Sources */,
