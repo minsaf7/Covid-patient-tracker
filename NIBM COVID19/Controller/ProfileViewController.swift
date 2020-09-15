@@ -12,6 +12,10 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Profile"
+        
+        view.backgroundColor = .systemGray
+        configureNavigationBar()
 
         // Do any additional setup after loading the view.
     }
@@ -26,5 +30,13 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func configureNavigationBar() {
+           navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barStyle = .default
+        
+       }
+    
+    
 
 }

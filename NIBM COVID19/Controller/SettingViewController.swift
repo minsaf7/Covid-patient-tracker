@@ -49,7 +49,7 @@ class SettingViewController: UIViewController {
            tile.addSubview(separatorView)
            separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
            
-          // tile.addTarget(self, action: #selector(showProfile), for: .touchUpInside)
+          tile.addTarget(self, action: #selector(showProfile), for: .touchUpInside)
            
            return tile
        }()
@@ -160,6 +160,16 @@ class SettingViewController: UIViewController {
         view.addSubview(logoutButton)
         logoutButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, height: 60)
         
+    }
+    
+    
+    
+    //MARK: - API
+    
+    @objc func showProfile(){
+        let vc = ProfileViewController()
+               vc.hidesBottomBarWhenPushed = true
+               self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
