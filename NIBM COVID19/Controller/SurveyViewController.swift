@@ -37,7 +37,7 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         //view.backgroundColor = .white
         configureNavigationBar()
         
-        self.view.backgroundColor=UIColor.white
+        self.view.backgroundColor=UIColor.systemGray6
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -192,21 +192,23 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let btnPrev: UIButton = {
             let btn=UIButton()
-            btn.setTitle("< Previous", for: .normal)
-            btn.setTitleColor(UIColor.black, for: .normal)
-            btn.backgroundColor=UIColor.white
+            btn.setTitle("PREVIOUS", for: .normal)
+            btn.setTitleColor(UIColor.systemBlue, for: .normal)
+            btn.backgroundColor=UIColor.systemGray6
             btn.translatesAutoresizingMaskIntoConstraints=false
-            btn.layer.borderColor = UIColor.init(white: 1, alpha: 1).cgColor
+            btn.layer.borderColor = UIColor.systemGray6.cgColor
             btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
             return btn
         }()
         
         let btnNext: UIButton = {
             let btn=UIButton()
-            btn.setTitle("Next >", for: .normal)
-            btn.setTitleColor(UIColor.white, for: .normal)
-            btn.backgroundColor=UIColor.black
+            btn.setTitle("NEXT ", for: .normal)
+            btn.setTitleColor(UIColor.systemBlue, for: .normal)
+            btn.backgroundColor=UIColor.systemGray6
+             btn.layer.borderColor = UIColor.systemGray6.cgColor
             btn.translatesAutoresizingMaskIntoConstraints=false
+            
             btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
             return btn
         }()

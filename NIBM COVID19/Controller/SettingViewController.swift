@@ -44,10 +44,10 @@ class SettingViewController: UIViewController {
         arrow.anchor( right: tile.rightAnchor, paddingRight: 10, height: 24, width: 14)
            arrow.centerY(inView: tile)
            
-           let separatorView = UIView()
-           separatorView.backgroundColor = .lightGray
-           tile.addSubview(separatorView)
-           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
+//           let separatorView = UIView()
+//           separatorView.backgroundColor = .lightGray
+//           tile.addSubview(separatorView)
+//           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
            
           tile.addTarget(self, action: #selector(showProfile), for: .touchUpInside)
            
@@ -76,10 +76,10 @@ class SettingViewController: UIViewController {
            arrow.anchor(right: tile.rightAnchor, paddingRight: 20,  height: 24, width: 14)
            arrow.centerY(inView: tile)
            
-           let separatorView = UIView()
-           separatorView.backgroundColor = .lightGray
-           tile.addSubview(separatorView)
-           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
+//           let separatorView = UIView()
+//           separatorView.backgroundColor = .lightGray
+//           tile.addSubview(separatorView)
+//           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
            
         //   tile.addTarget(self, action: #selector(showContact), for: .touchUpInside)
            
@@ -151,7 +151,7 @@ class SettingViewController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [profileButtonContainer, contactButtonContainer, shareButtonContainer])
               stack.axis = .vertical
               stack.distribution = .fillProportionally
-              stack.spacing = 0
+              stack.spacing = 5
         
         view.addSubview(stack)
         stack.anchor(top: titleLbl.bottomAnchor,  paddingTop: 20, height: 210,width: 370)

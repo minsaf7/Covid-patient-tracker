@@ -57,13 +57,15 @@ var btn1: UIButton!
     }
     
     override func prepareForReuse() {
-        btn1.backgroundColor=UIColor.white
-        btn2.backgroundColor=UIColor.white
+        btn1.backgroundColor=UIColor.systemBlue
+        btn2.backgroundColor=UIColor.systemBlue
 //        btn3.backgroundColor=UIColor.white
 //        btn4.backgroundColor=UIColor.white
     }
     
     func setupViews() {
+        
+        backgroundColor = .systemGray6
 //        addSubview(imgView)
 //        imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
 //        imgView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive=true
@@ -120,10 +122,11 @@ var btn1: UIButton!
         btn.tag=tag
         btn.setTitle("Option", for: .normal)
         btn.setTitleColor(UIColor.black, for: .normal)
-        btn.backgroundColor=UIColor.white
+        btn.backgroundColor=UIColor.systemBlue
+       // btn.setTitleShadowColor(.black, for: .highlighted)
         
         btn.layer.borderWidth=1
-        btn.layer.borderColor=UIColor.darkGray.cgColor
+        btn.layer.borderColor=UIColor.systemGray6.cgColor
         btn.layer.cornerRadius=5
         btn.clipsToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
