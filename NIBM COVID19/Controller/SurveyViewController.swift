@@ -34,7 +34,8 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        //view.backgroundColor = .white
+        configureNavigationBar()
         
         self.view.backgroundColor=UIColor.white
         
@@ -192,9 +193,10 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         let btnPrev: UIButton = {
             let btn=UIButton()
             btn.setTitle("< Previous", for: .normal)
-            btn.setTitleColor(UIColor.white, for: .normal)
-            btn.backgroundColor=UIColor.black
+            btn.setTitleColor(UIColor.black, for: .normal)
+            btn.backgroundColor=UIColor.white
             btn.translatesAutoresizingMaskIntoConstraints=false
+            btn.layer.borderColor = UIColor.init(white: 1, alpha: 1).cgColor
             btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
             return btn
         }()
@@ -253,6 +255,10 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     // MARK: - Navigation
 
-   
+   func configureNavigationBar() {
+             navigationController?.navigationBar.isHidden = false
+          navigationController?.navigationBar.barStyle = .default
+          
+         }
 
 }
