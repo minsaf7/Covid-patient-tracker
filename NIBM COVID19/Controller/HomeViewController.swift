@@ -284,6 +284,7 @@ configureNavigationBar()
     // MARK: - Helper Function
     
     func configController() {
+        configureNavigationBar()
        configureUI()
        fetchUserData()
        // fetchOtherUsers()

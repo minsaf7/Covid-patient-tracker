@@ -19,7 +19,7 @@ struct safeAction {
 class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var myCollectionView: UICollectionView!
-    var questionsArray = [safeAction]()
+    var actionArray = [safeAction]()
     var score: Int = 0
     var currentQuestionNumber = 1
     
@@ -54,18 +54,18 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         let que4 = safeAction(imgName: "handsanitizer", headerText: "Use hand sanitizer", description: "Sanitize your hand frequently will kill all the germs in your hands")
         let que5 = safeAction(imgName: "socialdistancing", headerText: "Maintain socialdistancing ?", description: "Maintain atleast 1 meter gap inbetween yourself and others when going out and follow covid 19 safe guidlines")
       
-        questionsArray = [que1, que2, que3,que4,que5]
+        actionArray = [que1, que2, que3,que4,que5]
         
         setupViews()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return questionsArray.count
+        return actionArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SafeActionCollectionViewCell
-        cell.question=questionsArray[indexPath.row]
+        cell.covidActions=actionArray[indexPath.row]
         cell.delegate=self
         return cell
     }
@@ -95,7 +95,7 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     }
     
     @objc func btnPrevNextAction(sender: UIButton) {
-        if sender == btnNext && currentQuestionNumber == questionsArray.count {
+        if sender == btnNext && currentQuestionNumber == actionArray.count {
           popAlert()
             return
         }
@@ -104,7 +104,7 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         var contentOffset: CGFloat = 0
         if sender == btnNext {
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
-           currentQuestionNumber += currentQuestionNumber >= questionsArray.count ? 0 : 1
+           currentQuestionNumber += currentQuestionNumber >= actionArray.count ? 0 : 1
         } else {
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x - collectionBounds.size.width))
         currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1

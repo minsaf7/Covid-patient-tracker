@@ -15,9 +15,9 @@ class UpdateViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sign up for NIBM COVID19"
+        label.text = "UPDATE"
         label.font = UIFont(name: "Avenir-Light", size: 20)
-        label.textColor = UIColor(white: 1, alpha: 0.8)
+        label.textColor = .black
         
         
         return label
@@ -66,7 +66,7 @@ class UpdateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
        configureNavigationBar()
         
      // checkIsUserLoggedIn()
@@ -80,9 +80,12 @@ class UpdateViewController: UIViewController {
     
     func configureUI(){
         
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 5)
+        titleLabel.centerX(inView: view)
         
         view.addSubview(createSurteyurveyBtn)
-   createSurteyurveyBtn.anchor(top: view.safeAreaLayoutGuide.topAnchor,  paddingTop: 40, width: 300)
+   createSurteyurveyBtn.anchor(top: titleLabel.bottomAnchor,  paddingBottom:  30, width: 300)
         createSurteyurveyBtn.centerX(inView: view)
         
         let tempStack = UIStackView(arrangedSubviews: [tempContainer,submitTemperature])
