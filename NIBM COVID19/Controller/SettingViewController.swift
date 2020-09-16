@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingViewController: UIViewController {
 
@@ -119,7 +120,7 @@ class SettingViewController: UIViewController {
            button.setTitleColor(.black, for: .normal)
            button.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
           // button.addTextSpacing(2)
-          // button.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
+           button.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
            return button
        }()
     
@@ -171,5 +172,18 @@ class SettingViewController: UIViewController {
                vc.hidesBottomBarWhenPushed = true
                self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+    @objc func handleLogout(){
+        signOut()
+    }
+    
+    func signOut() {
+                  do {
+                      try Auth.auth().signOut()
+                  } catch {
+                      print("DEBUG: sign out error")
+                  }
+              }
 
 }

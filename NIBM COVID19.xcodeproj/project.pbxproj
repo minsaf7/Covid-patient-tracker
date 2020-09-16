@@ -28,6 +28,9 @@
 		084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */; };
 		0852563724FE4D0100543AE4 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */; };
 		0852563924FE50F800543AE4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852563824FE50F800543AE4 /* SurveyResultViewController.swift */; };
+		0859B8C925120AF500A82873 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8C825120AF500A82873 /* Service.swift */; };
+		0859B8CB25120B7E00A82873 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8CA25120B7E00A82873 /* LocationHandler.swift */; };
+		0859B8CD25120BD500A82873 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8CC25120BD500A82873 /* User.swift */; };
 		0859B91D24FE3DE800BD84EA /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B91C24FE3DE800BD84EA /* SurveyViewController.swift */; };
 		08628A2B2510DDBC007B070E /* SafeActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08628A2A2510DDBC007B070E /* SafeActionViewController.swift */; };
 		086DAF5425111A2700834E01 /* SafeActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086DAF5325111A2700834E01 /* SafeActionCollectionViewCell.swift */; };
@@ -81,6 +84,9 @@
 		084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0852563824FE50F800543AE4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
+		0859B8C825120AF500A82873 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		0859B8CA25120B7E00A82873 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		0859B8CC25120BD500A82873 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0859B91C24FE3DE800BD84EA /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		08628A2A2510DDBC007B070E /* SafeActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionViewController.swift; sourceTree = "<group>"; };
 		086DAF5325111A2700834E01 /* SafeActionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 		082781ED24F1003C009885DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0859B8CC25120BD500A82873 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 		082781F024F1007F009885DD /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0859B8C825120AF500A82873 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				082781F424F10D18009885DD /* extension.swift */,
+				0859B8CA25120B7E00A82873 /* LocationHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -500,12 +509,15 @@
 				084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */,
 				0845D84924F612AC00B2FF71 /* CustomAuthButtonUI.swift in Sources */,
 				0852563724FE4D0100543AE4 /* SurveyCollectionViewCell.swift in Sources */,
+				0859B8C925120AF500A82873 /* Service.swift in Sources */,
 				08628A2B2510DDBC007B070E /* SafeActionViewController.swift in Sources */,
 				082781C524F0FEB1009885DD /* NIBM_COVID19.xcdatamodeld in Sources */,
 				084912B9250F3D06004BED49 /* LocationInputView.swift in Sources */,
 				084B825C2510C38800F7C951 /* ProfileViewController.swift in Sources */,
+				0859B8CD25120BD500A82873 /* User.swift in Sources */,
 				08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */,
 				086DAF5425111A2700834E01 /* SafeActionCollectionViewCell.swift in Sources */,
+				0859B8CB25120B7E00A82873 /* LocationHandler.swift in Sources */,
 				0845D84D24F6292500B2FF71 /* HomeViewController.swift in Sources */,
 				084E62D924F77D48007E6AF6 /* LocationInputActivationUIView.swift in Sources */,
 				0852563924FE50F800543AE4 /* SurveyResultViewController.swift in Sources */,
