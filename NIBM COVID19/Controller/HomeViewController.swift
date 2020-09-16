@@ -11,15 +11,61 @@ import Firebase
 import MapKit
 
 
+private let reuseIdentifier = "LocationCell"
+private let annotationIdentifier = "UserAnnotation"
+
+
 class HomeViewController: UIViewController {
 
 
     //MARK: Properties
 
     private let userMap = MKMapView()
-    private let locationManager = CLLocationManager()
-    private let inputActivationUIView = LocationInputActivationUIView ()
+   // private let locationManager = CLLocationManager()
+    private let inputActivationUIView = LocationInputUIView()
+     private let locationManager = LocationHandler.shared.locationManager
+    private var route: MKRoute?
 
+    
+    
+    private let topViewContainer: UIView = {
+           let containerView = UIView()
+           containerView.backgroundColor = .white
+           
+           let iconImage = UIImageView()
+           iconImage.image = UIImage(named: "facemask")
+           containerView.addSubview(iconImage)
+           iconImage.anchor(left: containerView.leftAnchor, paddingLeft: 36,  height: 125,width: 125)
+           iconImage.centerY(inView: containerView)
+           
+           let topText = UILabel()
+           topText.text = "All you need is"
+           topText.font = UIFont(name: "Avenir-Medium", size: 26)
+           containerView.addSubview(topText)
+           topText.anchor(top: iconImage.topAnchor, left: iconImage.rightAnchor, paddingLeft: 34)
+           
+           let subTitle = UILabel()
+           subTitle.text = "stay at home"
+           subTitle.font = UIFont(name: "Avenir-Black", size: 30)
+           containerView.addSubview(subTitle)
+           subTitle.anchor(top: topText.bottomAnchor, left: iconImage.rightAnchor, paddingLeft: 34)
+           
+           let safeActions = UIButton()
+           let imgConfig = UIImage.SymbolConfiguration(pointSize: 0, weight: .medium, scale: .small)
+           safeActions.setTitle("Safe Actions ", for: .normal)
+           safeActions.setTitleColor(.darkGray, for: .normal)
+           safeActions.setImage(UIImage(systemName: "chevron.left", withConfiguration: imgConfig), for: .normal)
+           safeActions.tintColor = .darkGray
+           safeActions.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+           safeActions.semanticContentAttribute = .forceRightToLeft
+           safeActions.sizeToFit()
+         //  safeActions.addTarget(self, action: #selector(showSafeActions), for: .touchUpInside)
+           containerView.addSubview(safeActions)
+           safeActions.anchor(top: subTitle.bottomAnchor, left: iconImage.rightAnchor, paddingTop: 15, paddingLeft: 34)
+           
+           return containerView
+       }()
+       
 
 
 
@@ -29,9 +75,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     checkIsUserLoggedIn()
+    // checkIsUserLoggedIn()
       //  signOut()
-
+configureUI()
     }
 
 
@@ -40,17 +86,22 @@ class HomeViewController: UIViewController {
 
     func configureUI(){
          configureNavigationBar()
-        setMap()
-        view.addSubview(inputActivationUIView)
-        inputActivationUIView.centerX(inView: view)
-        inputActivationUIView.setDimensions(height: 50, width: view.frame.width - 64)
-        inputActivationUIView.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 20)
-
-        inputActivationUIView.alpha = 0
-
-        UIView.animate(withDuration: 2) {
-            self.inputActivationUIView.alpha = 1
-        }
+        view.backgroundColor = .systemGray6
+               view.addSubview(topViewContainer)
+        topViewContainer.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 30 * view.bounds.height/100)
+        
+        
+//        setMap()
+//        view.addSubview(inputActivationUIView)
+//        inputActivationUIView.centerX(inView: view)
+//        inputActivationUIView.setDimensions(height: 50, width: view.frame.width - 64)
+//        inputActivationUIView.anchor(top: view.safeAreaLayoutGuide.topAnchor,paddingTop: 20)
+//
+//        inputActivationUIView.alpha = 0
+//
+//        UIView.animate(withDuration: 2) {
+//            self.inputActivationUIView.alpha = 1
+//        }
 
 
     }
@@ -153,46 +204,42 @@ class HomeViewController: UIViewController {
 
 
 
-extension HomeViewController : CLLocationManagerDelegate{
-    func enableLocationServices(){
+//extension HomeViewController : CLLocationManagerDelegate{
+//    func enableLocationServices(){
+//
+//        locationManager.delegate = self
+//
+//        switch CLLocationManager.authorizationStatus() {
+//        case .notDetermined:
+//            locationManager.requestWhenInUseAuthorization()
+//            print("Not determined")
+//       case .restricted, .denied:
+//            break
+//        case .authorizedWhenInUse:
+//            locationManager.requestAlwaysAuthorization()
+//            print("DEBUG: authorized When In Use")
+//        case .authorizedAlways:
+//            locationManager.startUpdatingLocation()
+//            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//            print("DEBUG: authorized Always")
+//        default:
+//            break
+//        }
+//
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        if status == .authorizedWhenInUse {
+//            locationManager.requestAlwaysAuthorization()
+//        }
+//
+//    }
+//
+//
+//
+//}
+//
 
-        locationManager.delegate = self
-
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            print("Not determined")
-       case .restricted, .denied:
-            break
-        case .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
-            print("DEBUG: authorized When In Use")
-        case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            print("DEBUG: authorized Always")
-        default:
-            break
-        }
-
-    }
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-
-    }
-
-
-
-}
-
-extension HomeViewController: LocationInputActivationUIViewDelegate {
-    func presentLocationInputView() {
-        print("DEBUG: LocationInputActivationUIViewDelegate called")
-    }
-}
 
 
 
