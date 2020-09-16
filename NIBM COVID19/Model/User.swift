@@ -16,6 +16,7 @@ struct User {
     var location: CLLocation?
     let uid: String
     var result: Int?
+    var surveyScore: Int?
     
     init(uid: String, dictionary: [String: Any]) {
         self.uid = uid
