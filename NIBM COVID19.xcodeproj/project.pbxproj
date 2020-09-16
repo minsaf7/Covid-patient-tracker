@@ -30,7 +30,7 @@
 		0859B8CB25120B7E00A82873 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8CA25120B7E00A82873 /* LocationHandler.swift */; };
 		0859B8CD25120BD500A82873 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8CC25120BD500A82873 /* User.swift */; };
 		0859B8CF25120D4100A82873 /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8CE25120D4100A82873 /* UserAnnotation.swift */; };
-		0859B8D5251218BC00A82873 /* LocationInputUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8D4251218BC00A82873 /* LocationInputUIView.swift */; };
+		0859B8D725121A1100A82873 /* LocationInputUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B8D625121A1100A82873 /* LocationInputUIView.swift */; };
 		0859B91D24FE3DE800BD84EA /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0859B91C24FE3DE800BD84EA /* SurveyViewController.swift */; };
 		08628A2B2510DDBC007B070E /* SafeActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08628A2A2510DDBC007B070E /* SafeActionViewController.swift */; };
 		086DAF5425111A2700834E01 /* SafeActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086DAF5325111A2700834E01 /* SafeActionCollectionViewCell.swift */; };
@@ -86,7 +86,7 @@
 		0859B8CA25120B7E00A82873 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		0859B8CC25120BD500A82873 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0859B8CE25120D4100A82873 /* UserAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
-		0859B8D4251218BC00A82873 /* LocationInputUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputUIView.swift; sourceTree = "<group>"; };
+		0859B8D625121A1100A82873 /* LocationInputUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputUIView.swift; sourceTree = "<group>"; };
 		0859B91C24FE3DE800BD84EA /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		08628A2A2510DDBC007B070E /* SafeActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionViewController.swift; sourceTree = "<group>"; };
 		086DAF5325111A2700834E01 /* SafeActionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeActionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				0845D84824F612AC00B2FF71 /* CustomAuthButtonUI.swift */,
-				0859B8D4251218BC00A82873 /* LocationInputUIView.swift */,
+				0859B8D625121A1100A82873 /* LocationInputUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,7 +524,7 @@
 				082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */,
 				0859B91D24FE3DE800BD84EA /* SurveyViewController.swift in Sources */,
 				082781F524F10D18009885DD /* extension.swift in Sources */,
-				0859B8D5251218BC00A82873 /* LocationInputUIView.swift in Sources */,
+				0859B8D725121A1100A82873 /* LocationInputUIView.swift in Sources */,
 				0845D84F24F62F6700B2FF71 /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

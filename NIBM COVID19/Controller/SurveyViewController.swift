@@ -195,8 +195,9 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
             btn.setTitle("PREVIOUS", for: .normal)
             btn.setTitleColor(UIColor.systemBlue, for: .normal)
             btn.backgroundColor=UIColor.systemGray6
-            btn.translatesAutoresizingMaskIntoConstraints=false
             btn.layer.borderColor = UIColor.systemGray6.cgColor
+            btn.translatesAutoresizingMaskIntoConstraints=false
+            
             btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
             return btn
         }()

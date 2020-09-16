@@ -26,3 +26,5 @@ struct User {
         self.role = dictionary["role"] as? String ?? ""
     }
 }
+
+

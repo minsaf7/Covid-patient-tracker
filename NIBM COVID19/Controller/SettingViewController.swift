@@ -176,11 +176,15 @@ class SettingViewController: UIViewController {
     
     @objc func handleLogout(){
         signOut()
+        print("Clicked")
     }
     
     func signOut() {
                   do {
                       try Auth.auth().signOut()
+                    let vc = SignUpViewController()
+                    
+                    
                   } catch {
                       print("DEBUG: sign out error")
                   }

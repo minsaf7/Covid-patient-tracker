@@ -43,16 +43,16 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         myCollectionView.register(SafeActionCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         myCollectionView.showsHorizontalScrollIndicator = false
         myCollectionView.translatesAutoresizingMaskIntoConstraints=false
-        myCollectionView.backgroundColor=UIColor.white
+        myCollectionView.backgroundColor=UIColor.systemGray6
         myCollectionView.isPagingEnabled = true
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = safeAction(imgName: "handwash", headerText: "Wash your hands", description: "Please wash your hands before leaving and when entering the home")
-        let que2 = safeAction(imgName: "nocrowd", headerText: "Avoid crowd", description: "Please avoid crowdwd places")
-        let que3 = safeAction(imgName: "patient", headerText: "Wear facemask", description: "Wearing facemask will save yourself aswell as others from spreading diseases")
-        let que4 = safeAction(imgName: "handsanitizer", headerText: "Use hand sanitizer", description: "Sanitize your hand frequently")
-        let que5 = safeAction(imgName: "socialdistancing", headerText: "Maintain socialdistancing ?", description: "Maintain atleast 1 meter gap inbetween yourself and others when going out")
+        let que1 = safeAction(imgName: "handwash", headerText: "Wash your hands", description: " Washing your hands frequently will destroy the viruses and bacterias!!")
+        let que2 = safeAction(imgName: "nocrowd", headerText: "Avoid crowd", description: "Please avoid visiting crowded places. Crowded places are the number one Covid 19 hotspots")
+        let que3 = safeAction(imgName: "patient", headerText: "Wear facemask", description: "Wearing facemask will save yourself aswell as others from spreading diseases, it will reduces the spread of viruses")
+        let que4 = safeAction(imgName: "handsanitizer", headerText: "Use hand sanitizer", description: "Sanitize your hand frequently will kill all the germs in your hands")
+        let que5 = safeAction(imgName: "socialdistancing", headerText: "Maintain socialdistancing ?", description: "Maintain atleast 1 meter gap inbetween yourself and others when going out and follow covid 19 safe guidlines")
       
         questionsArray = [que1, que2, que3,que4,que5]
         
@@ -124,7 +124,7 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
 //        myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
 //        myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         
-        myCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor)
+        myCollectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
         self.view.addSubview(btnPrev)
 //        btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
@@ -132,16 +132,16 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
 //        btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
 //        btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
         
-        btnPrev.anchor( left: view.leftAnchor, bottom: view.bottomAnchor, paddingBottom: 10, height: 50)
-         btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
+        btnPrev.anchor( left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingLeft: 20,paddingBottom: 40, height: 50,width: 100)
+        // btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
         
         self.view.addSubview(btnNext)
 //        btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
       
 //        btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
 //        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
-        btnNext.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 10,  height: 50)
-         btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
+        btnNext.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 40,paddingRight: 20,  height: 50,width: 100)
+      //   btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
         
 //        self.view.addSubview(lblQueNumber)
 //        lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
@@ -155,9 +155,12 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     
     let btnPrev: UIButton = {
         let btn=UIButton()
-        btn.setTitle("< Previous", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
+        btn.setTitle("PREVIOUS", for: .normal)
+       // btn.setTitleColor(UIColor.white, for: .normal)
+       // btn.backgroundColor=UIColor.orange
+        btn.setTitleColor(UIColor.systemBlue, for: .normal)
+        btn.backgroundColor=UIColor.systemGray6
+        btn.layer.borderColor = UIColor.systemGray6.cgColor
         btn.translatesAutoresizingMaskIntoConstraints=false
         btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
         return btn
@@ -165,9 +168,11 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     
     let btnNext: UIButton = {
         let btn=UIButton()
-        btn.setTitle("Next >", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.purple
+        btn.setTitle("NEXT", for: .normal)
+        
+        btn.setTitleColor(UIColor.systemBlue, for: .normal)
+        btn.backgroundColor=UIColor.systemGray6
+        btn.layer.borderColor = UIColor.systemGray6.cgColor
         btn.translatesAutoresizingMaskIntoConstraints=false
         
         btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
