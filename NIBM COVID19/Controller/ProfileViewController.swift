@@ -9,31 +9,40 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    //MARK:- Properties
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Profile"
+      //  self.title = "Profile"
         
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .systemGray6
         configureNavigationBar()
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
+    
+    //MARK: - Helper
+    
+    func configureUI(){
+        
+        
+        
+    }
+    
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func configureNavigationBar() {
-           navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barStyle = .default
+           navigationController?.navigationBar.isHidden = true
+      //  navigationController?.navigationBar.barStyle = .default
         
        }
     

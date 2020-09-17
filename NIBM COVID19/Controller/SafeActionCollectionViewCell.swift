@@ -62,6 +62,7 @@ class SafeActionCollectionViewCell: UICollectionViewCell {
 //        btn2.backgroundColor=UIColor.white
 //
 //    }
+    
 //
     func setupViews() {
         addSubview(imgView)
@@ -158,4 +159,7 @@ class SafeActionCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+     
 }

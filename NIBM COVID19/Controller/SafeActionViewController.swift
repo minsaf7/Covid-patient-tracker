@@ -27,7 +27,8 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Safe Actions"
+      //  self.title="Safe Actions"
+        configureNavigationBar()
         self.view.backgroundColor=UIColor.systemGray6
         
         let layout = UICollectionViewFlowLayout()
@@ -85,7 +86,9 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
 //    }
     @objc func navToHome(){
         let vc = MainTabBarController()
-                   self.navigationController?.pushViewController(vc, animated: true)
+                 //  self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true,completion: {})
     }
     
     @objc func popAlert(){
@@ -117,6 +120,12 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         let frame: CGRect = CGRect(x : contentOffset ,y : self.myCollectionView.contentOffset.y ,width : self.myCollectionView.frame.width,height : self.myCollectionView.frame.height)
         self.myCollectionView.scrollRectToVisible(frame, animated: true)
     }
+    
+    func configureNavigationBar() {
+         navigationController?.navigationBar.isHidden = true
+    //  navigationController?.navigationBar.barStyle = .default
+      
+     }
     
     func setupViews() {
 //        myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true

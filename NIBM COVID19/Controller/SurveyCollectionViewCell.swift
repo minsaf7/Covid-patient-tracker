@@ -63,7 +63,10 @@ var btn1: UIButton!
 //        btn4.backgroundColor=UIColor.white
     }
     
+    
     func setupViews() {
+        
+        
         
         backgroundColor = .systemGray6
 //        addSubview(imgView)
@@ -155,5 +158,8 @@ var btn1: UIButton!
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+   
 }
 

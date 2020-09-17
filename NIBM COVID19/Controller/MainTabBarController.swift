@@ -16,9 +16,9 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
-        
-        checkIsUserLoggedIn()
+       // configureNavigationBar()
+        configureTabBar()
+      //  checkIsUserLoggedIn()
       //  navigationController?.navigationBar.isHidden = true
        // self.tabBarController?.navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -63,41 +63,7 @@ class MainTabBarController: UITabBarController {
     
     //MARK: = API
          
-            func checkIsUserLoggedIn() {
-                if(Auth.auth().currentUser?.uid == nil) {
-    
-//                    DispatchQueue.main.async {
-//                         let nav = UINavigationController(rootViewController: LoginViewController())
-//                        self.present(nav, animated: true, completion: nil)
-//
-//
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-                    DispatchQueue.main.async {
-                                                      let nav = UINavigationController(rootViewController: LoginViewController())
-                                                      nav.modalPresentationStyle = .fullScreen
-                                                      self.present(nav, animated: true, completion: nil)
-                                                  }
-    
-    
-    
-    
-    
-                } else {
-                    print("DEBUG: User is logged in..")
-                    
-                    configureTabBar()
-                    
-                }
-            }
-            
-            func signOut() {
-                do {
-                    try Auth.auth().signOut()
-                } catch {
-                    print("DEBUG: sign out error")
-                }
-            }
+
      
      
 

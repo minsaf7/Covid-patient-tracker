@@ -35,7 +35,7 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         //view.backgroundColor = .white
-        configureNavigationBar()
+        self.configureNavigationBar()
         
         self.view.backgroundColor=UIColor.systemGray6
         
@@ -106,7 +106,11 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let surveyVC=SurveyResultViewController()
                surveyVC.score = score
                 surveyVC.totalScore = questionsArray.count
-                self.navigationController?.pushViewController(surveyVC, animated: false)
+//                self.navigationController?.pushViewController(surveyVC, animated: false)
+                surveyVC.hidesBottomBarWhenPushed = true
+                           //  self.navigationController?.pushViewController(vc, animated: true)
+                      surveyVC.modalPresentationStyle = .fullScreen
+                      present(surveyVC,animated: true,completion: {})
                 return
             }
             
@@ -129,6 +133,8 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         func setupViews() {
+            
+            configureNavigationBar()
 //            myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
 //            myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
 //            myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
@@ -260,7 +266,7 @@ class SurveyViewController: UIViewController, UICollectionViewDelegate, UICollec
 
    func configureNavigationBar() {
              navigationController?.navigationBar.isHidden = false
-          navigationController?.navigationBar.barStyle = .default
+       
           
          }
 

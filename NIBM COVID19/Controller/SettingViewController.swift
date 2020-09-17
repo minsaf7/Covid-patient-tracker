@@ -170,7 +170,9 @@ class SettingViewController: UIViewController {
     @objc func showProfile(){
         let vc = ProfileViewController()
                vc.hidesBottomBarWhenPushed = true
-               self.navigationController?.pushViewController(vc, animated: true)
+             //  self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true,completion: {})
     }
     
     

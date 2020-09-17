@@ -239,10 +239,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-configureNavigationBar()
-    checkIsUserLoggedIn()
-      //  signOut()
-//configureUI()
+        //enableLocationServices()
+//configureNavigationBar()
+   
+        configController()
     }
 
     // MARK: - API
@@ -355,39 +355,41 @@ configureNavigationBar()
         
         @objc func showSafeActions() {
             let vc = SafeActionViewController()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+//            vc.hidesBottomBarWhenPushed = true
+//            self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc,animated: true,completion: {})
         }
 
 
 
-    func checkIsUserLoggedIn() {
-                   if(Auth.auth().currentUser?.uid == nil) {
-
-//                       DispatchQueue.main.async {
-//                            let nav = UINavigationController(rootViewController: LoginViewController())
-//                           self.present(nav, animated: true, completion: nil)
+//    func checkIsUserLoggedIn() {
+//                   if(Auth.auth().currentUser?.uid == nil) {
+//
+////                       DispatchQueue.main.async {
+////                            let nav = UINavigationController(rootViewController: LoginViewController())
+////                           self.present(nav, animated: true, completion: nil)
+////
+////
+////                           self.dismiss(animated: true, completion: nil)
+////                       }
+//                    DispatchQueue.main.async {
+//                                   let nav = UINavigationController(rootViewController: LoginViewController())
+//                                   nav.modalPresentationStyle = .fullScreen
+//                                   self.present(nav, animated: true, completion: nil)
+//                               }
 //
 //
-//                           self.dismiss(animated: true, completion: nil)
-//                       }
-                    DispatchQueue.main.async {
-                                   let nav = UINavigationController(rootViewController: LoginViewController())
-                                   nav.modalPresentationStyle = .fullScreen
-                                   self.present(nav, animated: true, completion: nil)
-                               }
-
-
-
-
-
-                   } else {
-                       print("DEBUG: User is logged in..")
-                    // setMap()
-                    configController()
-
-                   }
-               }
+//
+//
+//
+//                   } else {
+//                       print("DEBUG: User is logged in..")
+//                    // setMap()
+//                    configController()
+//
+//                   }
+//               }
 
 
 

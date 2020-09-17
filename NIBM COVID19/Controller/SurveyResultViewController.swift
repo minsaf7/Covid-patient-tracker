@@ -14,8 +14,10 @@ class SurveyResultViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            navigationItem.hidesBackButton = true
+           // navigationItem.hidesBackButton = true
             
+            view.backgroundColor = .systemGray6
+            configureNavigationBar()
             setupViews()
         }
         
@@ -46,10 +48,17 @@ class SurveyResultViewController: UIViewController {
         
         @objc func btnRestartAction() {
             let vc = MainTabBarController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            //self.navigationController?.pushViewController(vc, animated: true)
+           // vc.hidesBottomBarWhenPushed = true
+                 //  self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc,animated: true,completion: {})
+            
         }
         
         func setupViews() {
+            
+            
             self.view.addSubview(lblTitle)
             lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80).isActive=true
             lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
@@ -76,17 +85,19 @@ class SurveyResultViewController: UIViewController {
             showRating()
             
             self.view.addSubview(btnRestart)
-            btnRestart.topAnchor.constraint(equalTo: lblRating.bottomAnchor, constant: 40).isActive=true
-            btnRestart.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-            btnRestart.widthAnchor.constraint(equalToConstant: 150).isActive=true
-            btnRestart.heightAnchor.constraint(equalToConstant: 50).isActive=true
+//            btnRestart.topAnchor.constraint(equalTo: lblRating.bottomAnchor, constant: 40).isActive=true
+//            btnRestart.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+//            btnRestart.widthAnchor.constraint(equalToConstant: 150).isActive=true
+//            btnRestart.heightAnchor.constraint(equalToConstant: 50).isActive=true
+            btnRestart.anchor(top: lblRating.bottomAnchor, paddingTop: 40, height: 50, width: 150)
+            btnRestart.centerX(inView: view)
             btnRestart.addTarget(self, action: #selector(btnRestartAction), for: .touchUpInside)
         }
         
         let lblTitle: UILabel = {
             let lbl=UILabel()
             lbl.text="Your Score"
-            lbl.textColor=UIColor.darkGray
+            lbl.textColor=UIColor.black
             lbl.textAlignment = .center
             lbl.font = UIFont.systemFont(ofSize: 46)
             lbl.numberOfLines=2
@@ -118,11 +129,18 @@ class SurveyResultViewController: UIViewController {
             let btn = UIButton()
             btn.setTitle("Go to Home", for: .normal)
             btn.setTitleColor(UIColor.white, for: .normal)
-            btn.backgroundColor=UIColor.orange
+            btn.backgroundColor=UIColor.black
             btn.layer.cornerRadius=5
             btn.clipsToBounds=true
             btn.translatesAutoresizingMaskIntoConstraints=false
             return btn
         }()
+     
+    
+  func  configureNavigationBar(){
+         navigationController?.navigationBar.isHidden = true
         
+    }
+    
+    
     }
