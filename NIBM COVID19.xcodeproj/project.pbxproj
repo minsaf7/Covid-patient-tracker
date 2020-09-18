@@ -23,6 +23,7 @@
 		0845D85124F62F7900B2FF71 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845D85024F62F7900B2FF71 /* SettingViewController.swift */; };
 		08467FB724F1707300355C5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08467FB624F1707300355C5B /* MainTabBarController.swift */; };
 		084B825C2510C38800F7C951 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084B825B2510C38800F7C951 /* ProfileViewController.swift */; };
+		084D55C6251502E800FD2673 /* PostNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D55C5251502E800FD2673 /* PostNotificationViewController.swift */; };
 		084ECFCA24F4DDBB00BF2883 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */; };
 		0852563724FE4D0100543AE4 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */; };
 		0852563924FE50F800543AE4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852563824FE50F800543AE4 /* SurveyResultViewController.swift */; };
@@ -79,6 +80,7 @@
 		0845D85024F62F7900B2FF71 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		08467FB624F1707300355C5B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		084B825B2510C38800F7C951 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		084D55C5251502E800FD2673 /* PostNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNotificationViewController.swift; sourceTree = "<group>"; };
 		084ECFC924F4DDBB00BF2883 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0852563624FE4D0100543AE4 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0852563824FE50F800543AE4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				084B825B2510C38800F7C951 /* ProfileViewController.swift */,
 				08628A2A2510DDBC007B070E /* SafeActionViewController.swift */,
 				086DAF5325111A2700834E01 /* SafeActionCollectionViewCell.swift */,
+				084D55C5251502E800FD2673 /* PostNotificationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				082781BB24F0FEB1009885DD /* AppDelegate.swift in Sources */,
 				082781F924F114B6009885DD /* SplashscreenViewController.swift in Sources */,
 				0859B91D24FE3DE800BD84EA /* SurveyViewController.swift in Sources */,
+				084D55C6251502E800FD2673 /* PostNotificationViewController.swift in Sources */,
 				082781F524F10D18009885DD /* extension.swift in Sources */,
 				0859B8D725121A1100A82873 /* LocationInputUIView.swift in Sources */,
 				0845D84F24F62F6700B2FF71 /* UpdateViewController.swift in Sources */,

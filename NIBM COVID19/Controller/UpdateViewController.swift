@@ -84,7 +84,7 @@ class UpdateViewController: UIViewController {
        //           tile.addSubview(separatorView)
        //           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
                   
-                 tile.addTarget(self, action: #selector(navToSurvey), for: .touchUpInside)
+                 tile.addTarget(self, action: #selector(navToNotification), for: .touchUpInside)
                   
                   return tile
               }()
@@ -194,6 +194,13 @@ class UpdateViewController: UIViewController {
     
     
     //MARK: - Selector
+    
+    @objc func navToNotification(){
+        let vc = PostNotificationViewController()
+               vc.hidesBottomBarWhenPushed = true
+               self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     @objc  func navToSurvey(){
         

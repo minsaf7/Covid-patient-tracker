@@ -21,7 +21,8 @@ enum AccountType: Int {
         //let role: String
         var location: CLLocation?
         let uid: String
-//        let temperature: String
+        let temperature: Int
+    let surveyScore: Int
 //        var result: Int?
         
         init(uid: String, dictionary: [String: Any]) {
@@ -29,6 +30,8 @@ enum AccountType: Int {
             self.fullName = dictionary["firstName"] as? String ?? ""
             self.address = dictionary["lastName"] as? String ?? ""
             self.email = dictionary["email"] as? String ?? ""
+            self.temperature = dictionary["bodyTemp"] as? Int ?? 0
+            self.surveyScore = dictionary["surveyScore"] as? Int ?? 0
          //   self.role = dictionary["role"] as? String ?? ""
 //            self.temperature = dictionary["temperature"] as? String ?? "0"
 //            self.result = dictionary["score"] as? Int ?? 0
