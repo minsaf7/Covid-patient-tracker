@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
 
 class PostNotificationViewController: UIViewController {
     
@@ -66,7 +68,7 @@ class PostNotificationViewController: UIViewController {
         button.layer.borderWidth  = 1.0
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.setTitleColor(UIColor(white: 0.5, alpha: 1.5), for: .normal)
-     //   button.addTarget(self, action: #selector(createNotifications), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(notific), for: UIControl.Event.touchUpInside)
         
         return button
         
@@ -122,6 +124,36 @@ configureNavigationBar()
     
     @objc func navBack(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    @objc func notific() {
+        
+        guard let notific = createNotificationTF.text else { return }
+        
+        let values = [
+            "notifications": notific
+            ] as [String : Any]
+        
+        
+        if notific.isEmpty {
+            
+            let ac = UIAlertController(title: "Create notifications", message: "Type your news", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
+        }
+        else {
+            
+            Database.database().reference().child("nibm-notifications").childByAutoId().updateChildValues(values) { (error, ref) in
+                
+                let ac = UIAlertController(title: "Create notifications", message: "Successfully created", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac, animated: true)
+                
+                self.createNotificationTF.text = ""
+            }
+        }
     }
 
     
