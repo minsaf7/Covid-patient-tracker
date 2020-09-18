@@ -146,7 +146,7 @@ class UpdateViewController: UIViewController {
         view.backgroundColor = .systemGray6
        configureNavigationBar()
        configureUI()
-     checkIsUserLoggedIn()
+    // checkIsUserLoggedIn()
      
    
 
@@ -204,12 +204,10 @@ class UpdateViewController: UIViewController {
 //       navigationController?.pushViewController(vc, animated: true)
         let vc = SurveyViewController()
         vc.hidesBottomBarWhenPushed = true
-                   //  self.navigationController?.pushViewController(vc, animated: true)
-              vc.modalPresentationStyle = .fullScreen
-              present(vc,animated: true,completion: {})
-//        vc.hidesBottomBarWhenPushed = true
-//        self.navigationController?.pushViewController(vc, animated: false)
-        
+        self.navigationController?.pushViewController(vc, animated: true)
+//              vc.modalPresentationStyle = .fullScreen
+//              present(vc,animated: true,completion: {})
+
         
         
     }
@@ -265,9 +263,10 @@ class UpdateViewController: UIViewController {
                     if(Auth.auth().currentUser?.uid == nil) {
         
                         DispatchQueue.main.async {
-                                                          let nav = UINavigationController(rootViewController: LoginViewController())
-                                                          nav.modalPresentationStyle = .fullScreen
-                                                          self.present(nav, animated: true, completion: nil)
+                                                          let nav = LoginViewController()
+                              self.navigationController?.pushViewController(nav, animated: true)
+//                                                          nav.modalPresentationStyle = .fullScreen
+//                                                          self.present(nav, animated: true, completion: nil)
                                                       }
         
         

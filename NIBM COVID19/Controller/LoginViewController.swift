@@ -201,8 +201,9 @@ class LoginViewController: UIViewController {
             }
             }
         
-        self.dismiss(animated: true, completion: nil)
+       // self.dismiss(animated: true, completion: nil)
         
+         navigationController?.popViewController(animated: true)
 
             
             

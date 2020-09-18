@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import MapKit
 import FirebaseAuth
+import FirebaseDatabase
 
 
 private let reuseIdentifier = "LocationCell"
@@ -242,21 +243,36 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         enableLocationServices()
 //configureNavigationBar()
-   
+  // checkIsUserLoggedIn()
         configController()
     }
 
     // MARK: - API
     
-//    func fetchUserData() {
-//        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-//        Service.shared.fetchUserData(uid: currentUid) { (user) in
-//            self.user = user
-//        }
-//    }
+
     
+    func checkIsUserLoggedIn() {
+                if(Auth.auth().currentUser?.uid == nil) {
+    
+                    DispatchQueue.main.async {
+                                                       let nav = LoginViewController()
+                                                                                  self.navigationController?.pushViewController(nav, animated: true)
+                                                  }
+    
+    
+    
+    
+    
+                } else {
+                    print("DEBUG: User is logged in..")
+                    fetchUsers()
+                 
+                    
+                }
+            }
     
     func fetchUsers() {
+
         guard let location = locationManager?.location else { return }
         Service.shared.fetchUsersLocation(location: location) { (user) in
             guard let coordinate = user.location?.coordinate else { return }
@@ -268,6 +284,8 @@ class HomeViewController: UIViewController {
                     guard let userAnno = annotation as? UserAnnotation else { return false }
                     
                     if userAnno.uid == user.uid {
+                        
+                        
                         userAnno.updateAnnotationPosition(withCoordinate: coordinate)
                         return true
                     }
@@ -282,32 +300,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-//    func fetchOtherUsers() {
-//        guard let location = locationManager?.location else { return }
-//        Service.shared.fetchUsersLocation(location: location) { (driver) in
-//            guard let coordinate = driver.location?.coordinate else { return }
-//            let annotation = UserAnnotation(uid: driver.uid, coordinate: coordinate)
-//
-//            var driverIsVisible: Bool {
-//
-//                return self.mapView.annotations.contains { (annotation) -> Bool in
-//                    guard let driverAnno = annotation as? UserAnnotation else { return false }
-//
-//                    if driverAnno.uid == driver.uid {
-//                        driverAnno.updateAnnotationPosition(withCoordinate: coordinate)
-//                        return true
-//                    }
-//
-//                    return false
-//                }
-//            }
-//
-//            if !driverIsVisible {
-//                self.mapView.addAnnotation(annotation)
-//            }
-//        }
-//    }
-
 
     // MARK: - Helper Function
     
@@ -390,39 +382,6 @@ class HomeViewController: UIViewController {
         }
 
 
-
-//    func checkIsUserLoggedIn() {
-//                   if(Auth.auth().currentUser?.uid == nil) {
-//
-////                       DispatchQueue.main.async {
-////                            let nav = UINavigationController(rootViewController: LoginViewController())
-////                           self.present(nav, animated: true, completion: nil)
-////
-////
-////                           self.dismiss(animated: true, completion: nil)
-////                       }
-//                    DispatchQueue.main.async {
-//                                   let nav = UINavigationController(rootViewController: LoginViewController())
-//                                   nav.modalPresentationStyle = .fullScreen
-//                                   self.present(nav, animated: true, completion: nil)
-//                               }
-//
-//
-//
-//
-//
-//                   } else {
-//                       print("DEBUG: User is logged in..")
-//                    // setMap()
-//                    configController()
-//
-//                   }
-//               }
-
-
-
-
-
     func signOut() {
                   do {
                       try Auth.auth().signOut()
@@ -430,13 +389,6 @@ class HomeViewController: UIViewController {
                       print("DEBUG: sign out error")
                   }
               }
-
-
-
-
-
-
-
 
 
     }
@@ -449,7 +401,7 @@ extension HomeViewController: MKMapViewDelegate {
         if let annotation = annotation as? UserAnnotation {
             let view = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
           //  view.image = UIImage(systemName: "mappin.circle.fill")
-            view.image = #imageLiteral(resourceName: "user")
+            view.image = #imageLiteral(resourceName: "alertVirus")
             view.image?.withTintColor(.red)
             //view.tintColor = .red
             return view

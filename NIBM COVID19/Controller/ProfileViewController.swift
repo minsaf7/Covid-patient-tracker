@@ -31,6 +31,16 @@ class ProfileViewController: UIViewController {
             
             return label
         }()
+    
+    
+    private let backButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(pointSize: .zero, weight: .bold, scale: .large)
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: boldConfig), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(navBack), for: .touchUpInside)
+        return button
+    }()
         
         private let nameLabel: UILabel = {
             
@@ -43,14 +53,14 @@ class ProfileViewController: UIViewController {
             return label
         }()
         
-        private let BackButton: UIButton = {
-            let button = UIButton()
-            // button.setTitle("Back", for: .normal)
-         //   button.setBackgroundImage( imageLiteral(resourceName: "baseline_arrow_back_black_36dp"), for: .normal)
-          //  button.addTarget(self, action: #selector(showSettingsController), for: UIControl.Event.touchUpInside)
-            
-            return button
-        }()
+//        private let BackButton: UIButton = {
+//            let button = UIButton()
+//            // button.setTitle("Back", for: .normal)
+//         //   button.setBackgroundImage( imageLiteral(resourceName: "baseline_arrow_back_black_36dp"), for: .normal)
+//            button.addTarget(self, action: #selector(navBack), for: UIControl.Event.touchUpInside)
+//
+//            return button
+//        }()
 
         private let updateButton: UIButton = {
             
@@ -197,6 +207,9 @@ LoadUI()
     //MARK: - Helper
     
     func LoadUI() {
+        
+        view.addSubview(backButton)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, height: 38, width: 38)
            
            view.addSubview(titleLabel)
 //           titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -342,6 +355,8 @@ LoadUI()
                }
                )}
        }
+    
+   
 
     
     @objc func updateOthers() {
@@ -382,6 +397,12 @@ LoadUI()
     func configureNavigationBar() {
            navigationController?.navigationBar.isHidden = true
       //  navigationController?.navigationBar.barStyle = .default
+        
+       }
+    
+    @objc func navBack(){
+          print("Clicked")
+        navigationController?.popViewController(animated: true)
         
        }
     

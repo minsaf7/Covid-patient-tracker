@@ -172,8 +172,7 @@ class SettingViewController: UIViewController {
         let vc = ProfileViewController()
                vc.hidesBottomBarWhenPushed = true
              //  self.navigationController?.pushViewController(vc, animated: true)
-        vc.modalPresentationStyle = .fullScreen
-        present(vc,animated: true,completion: {})
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -187,7 +186,9 @@ class SettingViewController: UIViewController {
                       try Auth.auth().signOut()
                     
                     print("Logged out")
-                 //   let vc = SignUpViewController()
+                   //let vc = LoginViewController()
+                   let nav = LoginViewController()
+                                                self.navigationController?.pushViewController(nav, animated: true)
                     
                     
                   } catch {
