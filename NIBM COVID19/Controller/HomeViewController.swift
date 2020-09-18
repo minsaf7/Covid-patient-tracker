@@ -375,10 +375,8 @@ class HomeViewController: UIViewController {
         
         @objc func showSafeActions() {
             let vc = SafeActionViewController()
-//            vc.hidesBottomBarWhenPushed = true
-//            self.navigationController?.pushViewController(vc, animated: true)
-            vc.modalPresentationStyle = .fullScreen
-            present(vc,animated: true,completion: {})
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 
 

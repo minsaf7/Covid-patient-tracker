@@ -127,11 +127,21 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
       
      }
     
+    @objc func navBack(){
+             print("Clicked")
+           navigationController?.popViewController(animated: true)
+           
+          }
+       
+    
     func setupViews() {
 //        myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
 //        myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
 //        myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
 //        myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
+        view.addSubview(backButton)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, height: 38, width: 38)
+        
         
         myCollectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
@@ -161,6 +171,15 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         
 
     }
+    
+    private let backButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let boldConfig = UIImage.SymbolConfiguration(pointSize: .zero, weight: .bold, scale: .large)
+        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: boldConfig), for: .normal)
+        button.tintColor = .black
+       button.addTarget(self, action: #selector(navBack), for: .touchUpInside)
+        return button
+    }()
     
     let btnPrev: UIButton = {
         let btn=UIButton()
