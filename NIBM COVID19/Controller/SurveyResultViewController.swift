@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class SurveyResultViewController: UIViewController {
     var score: Int?
@@ -55,6 +58,30 @@ class SurveyResultViewController: UIViewController {
             present(vc,animated: true,completion: {})
             
         }
+    
+    
+    
+    @objc func submitSurvey() {
+        
+        
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        
+               let values = [
+                "surveyScore": score ?? 0
+                      ] as [String: Any ]
+
+
+                      
+                          Database.database().reference().child("users").child(userID).updateChildValues(values) {(error,ref) in
+
+                              let popAlert = UIAlertController(title: "Temperature", message: "Temperature successfully updated", preferredStyle: .alert)
+                                         popAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                              self.present(popAlert,animated: true)
+
+                          }
+                      
+               
+           }
         
         func setupViews() {
             
@@ -73,7 +100,7 @@ class SurveyResultViewController: UIViewController {
 //            lblScore.widthAnchor.constraint(equalToConstant: 150).isActive=true
 //            lblScore.heightAnchor.constraint(equalToConstant: 60).isActive=true
             lblScore.text = "\(score!) / \(totalScore!)"
-            lblScore.textColor = .white
+            lblScore.textColor = .black
             
             self.view.addSubview(lblRating)
             lblRating.anchor(top: lblScore.bottomAnchor, paddingTop: 50, width: 300)
@@ -92,7 +119,14 @@ class SurveyResultViewController: UIViewController {
             btnRestart.anchor(top: lblRating.bottomAnchor, paddingTop: 40, height: 50, width: 150)
             btnRestart.centerX(inView: view)
             btnRestart.addTarget(self, action: #selector(btnRestartAction), for: .touchUpInside)
+            
+            
+            self.view.addSubview(btnSubmit)
+            btnSubmit.anchor(top: btnRestart.bottomAnchor, paddingTop: 10, height: 50, width: 150)
+            btnSubmit.centerX(inView: view)
+            
         }
+    
         
         let lblTitle: UILabel = {
             let lbl=UILabel()
@@ -135,6 +169,18 @@ class SurveyResultViewController: UIViewController {
             btn.translatesAutoresizingMaskIntoConstraints=false
             return btn
         }()
+    
+    let btnSubmit: UIButton = {
+              let btn = UIButton()
+              btn.setTitle("Submit Score", for: .normal)
+              btn.setTitleColor(UIColor.white, for: .normal)
+              btn.backgroundColor=UIColor.black
+              btn.layer.cornerRadius=5
+              btn.clipsToBounds=true
+              btn.translatesAutoresizingMaskIntoConstraints=false
+         btn.addTarget(self, action: #selector(submitSurvey), for: .touchUpInside)
+              return btn
+          }()
      
     
   func  configureNavigationBar(){

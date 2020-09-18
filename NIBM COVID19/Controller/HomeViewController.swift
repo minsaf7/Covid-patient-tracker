@@ -248,10 +248,37 @@ class HomeViewController: UIViewController {
 
     // MARK: - API
     
-    func fetchUserData() {
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        Service.shared.fetchUserData(uid: currentUid) { (user) in
-            self.user = user
+//    func fetchUserData() {
+//        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+//        Service.shared.fetchUserData(uid: currentUid) { (user) in
+//            self.user = user
+//        }
+//    }
+    
+    
+    func fetchUsers() {
+        guard let location = locationManager?.location else { return }
+        Service.shared.fetchUsersLocation(location: location) { (user) in
+            guard let coordinate = user.location?.coordinate else { return }
+            let annotation = UserAnnotation(uid: user.uid, coordinate: coordinate)
+            
+            var userIsVisible: Bool {
+                
+                return self.userMap.annotations.contains { (annotation) -> Bool in
+                    guard let userAnno = annotation as? UserAnnotation else { return false }
+                    
+                    if userAnno.uid == user.uid {
+                        userAnno.updateAnnotationPosition(withCoordinate: coordinate)
+                        return true
+                    }
+                    
+                    return false
+                }
+            }
+            
+            if !userIsVisible {
+                self.userMap.addAnnotation(annotation)
+            }
         }
     }
     
@@ -287,7 +314,7 @@ class HomeViewController: UIViewController {
     func configController() {
         configureNavigationBar()
        configureUI()
-       fetchUserData()
+       fetchUsers()
        // fetchOtherUsers()
     }
 
@@ -421,7 +448,8 @@ extension HomeViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? UserAnnotation {
             let view = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            view.image = UIImage(systemName: "mappin.circle.fill")
+          //  view.image = UIImage(systemName: "mappin.circle.fill")
+            view.image = #imageLiteral(resourceName: "user")
             view.image?.withTintColor(.red)
             //view.tintColor = .red
             return view
