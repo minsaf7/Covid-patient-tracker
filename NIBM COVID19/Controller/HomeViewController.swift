@@ -271,34 +271,101 @@ class HomeViewController: UIViewController {
                 }
             }
     
+//    func fetchUsers() {
+//
+//        guard let location = locationManager?.location else { return }
+//        Service.shared.fetchUsersLocation(location: location) { (user) in
+//            guard let coordinate = user.location?.coordinate else { return }
+//            let annotation = UserAnnotation(uid: user.uid, coordinate: coordinate)
+//
+//
+//           // let bodyTemp = user.temperature
+//           // let surveyScore = user.surveyScore
+//
+//            var userIsVisible: Bool {
+//
+//
+//
+//                return self.userMap.annotations.contains { (annotation) -> Bool in
+//                    guard let userAnno = annotation as? UserAnnotation else { return false }
+//
+//                    if userAnno.uid == user.uid {
+//
+//
+//                        userAnno.updateAnnotationPosition(withCoordinate: coordinate)
+//                        return true
+//                    }
+//
+//                    return false
+//                }
+//            }
+//
+//            if !userIsVisible {
+//                self.userMap.addAnnotation(annotation)
+//            }
+//        }
+//    }
+
+    
+    
+    
+    
+    
     func fetchUsers() {
 
         guard let location = locationManager?.location else { return }
         Service.shared.fetchUsersLocation(location: location) { (user) in
             guard let coordinate = user.location?.coordinate else { return }
             let annotation = UserAnnotation(uid: user.uid, coordinate: coordinate)
-            
+
+
+            let bodyTemp = user.temperature
+            let surveyScore = user.surveyScore
+
             var userIsVisible: Bool {
-                
+
+
+
                 return self.userMap.annotations.contains { (annotation) -> Bool in
                     guard let userAnno = annotation as? UserAnnotation else { return false }
-                    
+
                     if userAnno.uid == user.uid {
-                        
-                        
+
+                          if bodyTemp > 35 && surveyScore >= 3{
+
+
                         userAnno.updateAnnotationPosition(withCoordinate: coordinate)
+
+
+                            let alet = UIAlertController(title: "WARNING", message: "Covid infect patient is near you!! Take safe actions", preferredStyle: .alert)
+        alet.addAction(UIAlertAction(title: "OK", style: .default))
+                            self.present(alet,animated: true)
+
                         return true
                     }
-                    
+ }
                     return false
                 }
             }
-            
+
             if !userIsVisible {
+      if bodyTemp > 35 && surveyScore >= 3{
                 self.userMap.addAnnotation(annotation)
+
+        let alet = UIAlertController(title: "WARNING", message: "Covid infect patient is near you!! Take safe actions", preferredStyle: .alert)
+          alet.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alet,animated: true)
+
+
+          }
             }
         }
     }
+    
+    
+    
+    
+    
     
 
     // MARK: - Helper Function
