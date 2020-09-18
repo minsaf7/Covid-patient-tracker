@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseCore
 import FirebaseDatabase
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
     
@@ -58,7 +59,7 @@ class ProfileViewController: UIViewController {
             button.setTitle("U P D A T E", for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 18)
-          //  button.addTarget(self, action: #selector(updateOthers), for: .touchUpInside)
+            button.addTarget(self, action: #selector(updateOthers), for: .touchUpInside)
             
             return button
         }()
@@ -117,7 +118,7 @@ class ProfileViewController: UIViewController {
             button.setTitleColor(UIColor(white: 1, alpha: 1), for: .normal)
             button.layer.cornerRadius = 5
             button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-         //   button.addTarget(self, action: #selector(updateAll), for: UIControl.Event.touchUpInside)
+            button.addTarget(self, action: #selector(updateAll), for: UIControl.Event.touchUpInside)
             
             
            return button
@@ -289,7 +290,90 @@ LoadUI()
         }
         
         
+    func uploadProfilePic() {
+       
+           let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.handleSelectProfileImageView))
+           profileImageView.addGestureRecognizer(tapGuesture)
+           profileImageView.isUserInteractionEnabled = true
+       }
 
+       @objc func showSettingsController() {
+           let set = SettingViewController()
+           set.modalPresentationStyle = .fullScreen
+           present(set, animated: true, completion: {
+               // Back
+           })
+       }
+
+    @objc func updateAll() {
+           
+           let userID = Auth.auth().currentUser?.uid
+           
+           let storageRef = Storage.storage().reference(forURL:"gs://nibm-covid19-4052c.appspot.com/displayPictures").child(userID!).child("\(NSUUID().uuidString).jpg")
+           
+           if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
+               storageRef.putData(imageData, metadata: nil, completion: { (metadata, error ) in
+                   
+                   if error != nil{
+                       print("Error in uploading profile photo.")
+                   }
+
+                   storageRef.downloadURL(completion: {(url, error) in
+                       if error != nil {
+                           print(error!.localizedDescription)
+                           return
+                       }
+                       else if url == nil{
+                           print(error!.localizedDescription)
+                           return
+                       }
+                       
+                       let pic = url?.absoluteString
+       
+                       let userdata = ["profilePicURL": pic as Any,]
+                       Database.database().reference().child("users").child((userID)!).updateChildValues(userdata) { (error, ref) in
+                       
+                           let ac = UIAlertController(title: "Profile Pic", message: "Successfully updated", preferredStyle: .alert)
+                           ac.addAction(UIAlertAction(title: "OK", style: .default))
+                           self.present(ac, animated: true)
+                       }
+                       
+                   })
+               }
+               )}
+       }
+
+    
+    @objc func updateOthers() {
+       
+           guard let userID = Auth.auth().currentUser?.uid else { return }
+           
+           guard let name = fullNameTextField.text else { return }
+           guard let index = indexTextField.text else { return }
+           guard let country = countryDropDown.text else { return }
+           
+           let values = [
+               "fullName": name,
+               "indexOrEmployeeCode": index,
+               "country": country
+               ] as [String : Any]
+           
+           Database.database().reference().child("users").child(userID).updateChildValues(values) { (error, ref) in
+               
+               let ac = UIAlertController(title: "Fields update", message: "Successfully updated", preferredStyle: .alert)
+               ac.addAction(UIAlertAction(title: "OK", style: .default))
+               self.present(ac, animated: true)
+               
+           }
+       }
+
+    
+    @objc func handleSelectProfileImageView(){
+           let pickerController = UIImagePickerController()
+           pickerController.delegate = self
+           present(pickerController, animated: true, completion: nil)
+       }
+    
     
     
     // MARK: - Navigation
@@ -304,3 +388,19 @@ LoadUI()
     
 
 }
+
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[.originalImage] as? UIImage {
+            selectedImage = image
+            profileImageView.image = image
+        }
+        print(info)
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
