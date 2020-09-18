@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseCore
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
     
@@ -198,28 +201,35 @@ LoadUI()
 //           titleLabel.translatesAutoresizingMaskIntoConstraints = false
 //           titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 //           titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        titleLabel.
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 5)
+        titleLabel.centerX(inView: view)
            
-           view.addSubview(BackButton)
+       //    view.addSubview(BackButton)
          //  BackButton.anchor(top: view.safeAreaLayoutGuide.topAnchor,left: view.leftAnchor, paddingTop: 5, paddingLeft: 15, width: 30, height: 25)
            
            view.addSubview(nameLabel)
-           nameLabel.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40)
+           nameLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 40)
+        nameLabel.centerX(inView: view)
            
            view.addSubview(profileImageView)
-           profileImageView.anchor(top: nameLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 25, paddingLeft: 150, paddingRight: 150, height: 90)
+           profileImageView.anchor(top: nameLabel.bottomAnchor, paddingTop: 25, height: 90,width: 90)
+        profileImageView.centerX(inView: view)
            
            view.addSubview(updatePic)
-           updatePic.anchor(top: profileImageView.bottomAnchor,left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 170, paddingRight: 170)
+           updatePic.anchor(top: profileImageView.bottomAnchor, paddingTop: 8)
+        updatePic.centerX(inView: view)
            
            view.addSubview(ActiveLabel)
-           ActiveLabel.anchor(top: updatePic.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 15, paddingLeft: 90, paddingRight: 90)
+           ActiveLabel.anchor(top: updatePic.bottomAnchor,  paddingTop: 15)
+        ActiveLabel.centerX(inView: view)
            
            view.addSubview(addressLabel)
-           addressLabel.anchor(top: ActiveLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 5, paddingLeft: 90, paddingRight: 90)
+           addressLabel.anchor(top: ActiveLabel.bottomAnchor,paddingTop: 5)
+        addressLabel.centerX(inView: view)
            
            view.addSubview(tempLabel)
-           tempLabel.anchor(top: addressLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 5, paddingLeft: 90, paddingRight: 90)
+           tempLabel.anchor(top: addressLabel.bottomAnchor, paddingTop: 5)
+        tempLabel.centerX(inView: view)
            
            let stack = UIStackView(arrangedSubviews: [fullNameTextField,indexTextField,countryDropDown])
            stack.axis = .vertical
@@ -227,19 +237,59 @@ LoadUI()
            stack.spacing = 24
            
            view.addSubview(stack)
-           stack.anchor(top: tempLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16)
+           stack.anchor(top: tempLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 14)
        
            view.addSubview(updateButton)
-           updateButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor)
+         //  updateButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor)
+        updateButton.anchor(top: stack.bottomAnchor, paddingTop: 10)
+        updateButton.centerX(inView: view)
            
-           view.addSubview(blankView)
-           blankView.anchor(top: stack.bottomAnchor, left: view.leftAnchor, bottom: updateButton.topAnchor, right: view.rightAnchor)
-    }
-    func configureUI(){
         
         
+        //fetch user details
+        let userID = Auth.auth().currentUser?.uid
+            Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user details
+                let value = snapshot.value as? NSDictionary
+                let name = value?["fullName"] as? String ?? ""
+                let address = value?["address"] as? String ?? ""
+                let temparature = value?["bodyTemp"] as? Int ?? 0
+                let profilePic = value?["profilePicURL"] as? String ?? ""
+                let index = value?["index"] as? String ?? ""
+                let country = value?["address"] as? String ?? ""
+                
+                let temp = String(temparature)
+                
+                self.nameLabel.text = name
+                self.addressLabel.text = "at \(address)"
+                self.tempLabel.text = temp+"'C"
+                self.fullNameTextField.text = name
+                self.indexTextField.text = index
+                self.countryDropDown.text = country
+                
+              
+                let imageUrl = URL(string: profilePic)
+                
+                if imageUrl == nil
+                {
+                    self.profileImageView.image =  #imageLiteral(resourceName: "patient")
+                }
+                else {
+                
+                let imageData = try! Data(contentsOf: imageUrl!)
+                let image = UIImage(data: imageData)
+                
+                self.profileImageView.image = image!
+                
+                }
+                // ...
+            }) { (error) in
+                print("Name not found")
+            }
+        }
         
-    }
+        
+
     
     
     // MARK: - Navigation
