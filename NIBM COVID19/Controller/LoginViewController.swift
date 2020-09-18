@@ -19,6 +19,8 @@
 import UIKit
 import Firebase
 import LocalAuthentication
+import FirebaseAuth
+import CoreData
 
 class LoginViewController: UIViewController {
     

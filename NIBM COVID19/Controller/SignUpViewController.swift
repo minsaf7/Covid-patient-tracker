@@ -11,6 +11,8 @@ import Firebase
 import GeoFire
 import FirebaseAuth
 import FirebaseDatabase
+
+
 class SignUpViewController: UIViewController {
 
     //MARK: - Properties
@@ -107,7 +109,7 @@ class SignUpViewController: UIViewController {
         SignButton.setTitle("Sign Up", for: .normal)
         SignButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         SignButton.backgroundColor = .black
-        SignButton.addTarget(self, action: #selector(userSignUp), for: .touchUpInside)
+        SignButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         
         return SignButton
     }()
@@ -164,74 +166,93 @@ class SignUpViewController: UIViewController {
     
     func configureNavigationBar() {
            navigationController?.navigationBar.isHidden = true
-           navigationController?.navigationBar.barStyle = .black
+           //navigationController?.navigationBar.barStyle = .black
        }
     
-    func uploadUserDataAndDismissView(uid: String, values: [String: Any]) {
-          print("location4")
-          REF_USERS.child(uid).updateChildValues(values) { (error, ref) in
-           print("SUCCESS")
-              self.dismiss(animated: true, completion: nil)
-          }
-      }
+    func uploadUserDataAndShowHomeController(uid: String, values: [String: Any]) {
+        
+        REF_USERS.child(uid).updateChildValues(values) //{ (error, ref) in
+            //handle error
+            //print("user here!")
+//            let keyWindow = UIApplication.shared.connectedScenes
+//            .filter({$0.activationState == .foregroundActive})
+//            .map({$0 as? UIWindowScene})
+//            .compactMap({$0})
+//            .first?.windows
+//            .filter({$0.isKeyWindow}).first
+//
+//            guard let controller = keyWindow?.rootViewController as? MainTabBarController else { return }
+//            controller.configureTabBar()
+            print("Account created")
+            self.dismiss(animated: true, completion: nil)
+    }
+    
+//    func uploadUserDataAndDismissView(uid: String, values: [String: Any]) {
+//          print("location4")
+//          REF_USERS.child(uid).updateChildValues(values) { (error, ref) in
+//           print("SUCCESS")
+//              self.dismiss(animated: true, completion: nil)
+//          }
+//      }
     
     // MARK: - Selectors
        
-       @objc func handleShowLogIn() {
-           navigationController?.popViewController(animated: true)
+       
+    
+    
+    @objc func handleSignUp() {
+        
+           guard let fullName = nameTextField.text else { return }
+           guard let address = addressTextField.text else { return }
+           guard let index = idTextField.text else { return }
+           guard let email = emailTextField.text else { return }
+           guard let password = pwordTextField.text else { return }
+        let accountType = accountTypeSegmentedControl.selectedSegmentIndex
+        
+           
+           Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+               if let error = error {
+                   print("Faild to signup user with error \(error)")
+                   return
+               }
+               
+            guard let uid = result?.user.uid else { return }
+            
+               let values = [
+                   "fullName": fullName,
+                   "address": address,
+                   "email": email,
+                   "index": index,
+                   "accountType" : accountType
+               ] as [String : Any]
+            
+//            if accountType == 0 || accountType == 1 {
+//
+//
+
+               let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+
+               guard let location = self.location else { return }
+                   print(location)
+            
+               geoFire.setLocation(location, forKey: uid, withCompletionBlock: { (error) in
+                   self.uploadUserDataAndShowHomeController(uid: uid, values: values)
+               })
+           
+               self.uploadUserDataAndShowHomeController(uid: uid, values: values)
+           }
        }
     
     
-    @objc func userSignUp(){
-         guard let fullName = nameTextField.text else { return }
-    
-        guard let address = addressTextField.text else { return }
-        guard let id = idTextField.text else {return}
-            guard let email = emailTextField.text else { return }
-               guard let password = pwordTextField.text else { return }
-        
-        let accountType = accountTypeSegmentedControl.selectedSegmentIndex
-        print("textfield")
-        
-        
-        Auth.auth().createUser(withEmail: email, password: password){
-            (result,error) in
-            if let error = error {
-                print("Faild to register user with error \(error)")
-                return
-        }
-            guard let uid = result?.user.uid else { return }
-                   
-                   let values = [
-                    "fullName": fullName,
-                    "address": address,
-                    "index":id,
-                    "email": email,
-                    "accountType": accountType
-                       ] as [String : Any]
-            
-            print("values done")
-            let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
-            print("geofire done")
-                                   guard let location = self.location else { return }
-            print("location1")
-            
-                                   geoFire.setLocation(location, forKey: uid, withCompletionBlock: { (error) in
-                                    print("set location done")
-                                       self.uploadUserDataAndDismissView(uid: uid, values: values)
-                                   })
-            
-             self.uploadUserDataAndDismissView(uid: uid, values: values)
-
-    
-    print("location5")
-
-    
+    @objc func handleShowLogIn() {
+     
+    // let vc = LoginViewController()
+    // navigationController?.pushViewController(vc, animated: true)
+        navigationController?.popViewController(animated: true)
     }
-        
-    }
+    
+
 }
-   
     
     
 

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class UpdateViewController: UIViewController {
 
@@ -144,9 +145,9 @@ class UpdateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
        configureNavigationBar()
-        
-     // checkIsUserLoggedIn()
-      configureUI()
+       configureUI()
+     checkIsUserLoggedIn()
+     
    
 
         // Do any additional setup after loading the view.
@@ -196,7 +197,7 @@ class UpdateViewController: UIViewController {
     
     @objc  func navToSurvey(){
         
-        checkIsUserLoggedIn()
+        //checkIsUserLoggedIn()
         
          print("DEBUG: Clicked..")
 //        let vc = SurveyViewController()
@@ -216,6 +217,9 @@ class UpdateViewController: UIViewController {
     
     
    @objc func submitTemp(){
+   // checkIsUserLoggedIn()
+    
+    
         guard let temperature = temperatureTextfield.text else {return}
         guard let bodyTemp = Int(temperature) else {return}
         guard let userID = Auth.auth().currentUser?.uid else {return}
@@ -239,6 +243,7 @@ class UpdateViewController: UIViewController {
 
                 let popAlert = UIAlertController(title: "Temperature", message: "Temperature successfully updated", preferredStyle: .alert)
                            popAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(popAlert,animated: true)
 
             }
         }
@@ -259,13 +264,6 @@ class UpdateViewController: UIViewController {
     func checkIsUserLoggedIn() {
                     if(Auth.auth().currentUser?.uid == nil) {
         
-    //                    DispatchQueue.main.async {
-    //                         let nav = UINavigationController(rootViewController: LoginViewController())
-    //                        self.present(nav, animated: true, completion: nil)
-    //
-    //
-    //                        self.dismiss(animated: true, completion: nil)
-    //                    }
                         DispatchQueue.main.async {
                                                           let nav = UINavigationController(rootViewController: LoginViewController())
                                                           nav.modalPresentationStyle = .fullScreen
@@ -279,7 +277,7 @@ class UpdateViewController: UIViewController {
                     } else {
                         print("DEBUG: User is logged in..")
                         
-                     configureUI()
+                     
                         
                     }
                 }

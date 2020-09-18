@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class SettingViewController: UIViewController {
 
@@ -184,7 +185,9 @@ class SettingViewController: UIViewController {
     func signOut() {
                   do {
                       try Auth.auth().signOut()
-                    let vc = SignUpViewController()
+                    
+                    print("Logged out")
+                 //   let vc = SignUpViewController()
                     
                     
                   } catch {

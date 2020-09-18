@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MapKit
+import FirebaseAuth
 
 
 private let reuseIdentifier = "LocationCell"
@@ -239,7 +240,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //enableLocationServices()
+        enableLocationServices()
 //configureNavigationBar()
    
         configController()
