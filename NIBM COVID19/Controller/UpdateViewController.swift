@@ -47,10 +47,8 @@ class UpdateViewController: UIViewController {
             arrow.anchor( right: tile.rightAnchor, paddingRight: 20, height: 24, width: 14)
                arrow.centerY(inView: tile)
                
-    //           let separatorView = UIView()
-    //           separatorView.backgroundColor = .lightGray
-    //           tile.addSubview(separatorView)
-    //           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
+  
+    
                
               tile.addTarget(self, action: #selector(navToSurvey), for: .touchUpInside)
                
@@ -79,10 +77,7 @@ class UpdateViewController: UIViewController {
                arrow.anchor( right: tile.rightAnchor, paddingRight: 20, height: 24, width: 14)
                   arrow.centerY(inView: tile)
                   
-       //           let separatorView = UIView()
-       //           separatorView.backgroundColor = .lightGray
-       //           tile.addSubview(separatorView)
-       //           separatorView.anchor(left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor, paddingLeft: 8, paddingRight: 8, height: 0.75)
+      
                   
                  tile.addTarget(self, action: #selector(navToNotification), for: .touchUpInside)
                   
@@ -145,8 +140,9 @@ class UpdateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
        configureNavigationBar()
-       configureUI()
-    // checkIsUserLoggedIn()
+      
+     checkIsUserLoggedIn()
+        configureUI()
      
    
 
@@ -272,8 +268,7 @@ class UpdateViewController: UIViewController {
                         DispatchQueue.main.async {
                                                           let nav = LoginViewController()
                               self.navigationController?.pushViewController(nav, animated: true)
-//                                                          nav.modalPresentationStyle = .fullScreen
-//                                                          self.present(nav, animated: true, completion: nil)
+//                                                          
                                                       }
         
         
@@ -282,7 +277,7 @@ class UpdateViewController: UIViewController {
         
                     } else {
                         print("DEBUG: User is logged in..")
-                        
+                         configureUI()
                      
                         
                     }

@@ -258,49 +258,63 @@ LoadUI()
         updateButton.anchor(top: stack.bottomAnchor, paddingTop: 10)
         updateButton.centerX(inView: view)
            
-        
-        
-        //fetch user details
-        let userID = Auth.auth().currentUser?.uid
-            Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Get user details
-                let value = snapshot.value as? NSDictionary
-                let name = value?["fullName"] as? String ?? ""
-                let address = value?["address"] as? String ?? ""
-                let temparature = value?["bodyTemp"] as? Int ?? 0
-                let profilePic = value?["profilePicURL"] as? String ?? ""
-                let index = value?["index"] as? String ?? ""
-                let country = value?["address"] as? String ?? ""
-                
-                let temp = String(temparature)
-                
-                self.nameLabel.text = name
-                self.addressLabel.text = "at \(address)"
-                self.tempLabel.text = temp+"'C"
-                self.fullNameTextField.text = name
-                self.indexTextField.text = index
-                self.countryDropDown.text = country
-                
-              
-                let imageUrl = URL(string: profilePic)
-                
-                if imageUrl == nil
-                {
-                    self.profileImageView.image =  #imageLiteral(resourceName: "patient")
-                }
-                else {
-                
-                let imageData = try! Data(contentsOf: imageUrl!)
-                let image = UIImage(data: imageData)
-                
-                self.profileImageView.image = image!
-                
-                }
-                // ...
-            }) { (error) in
-                print("Name not found")
-            }
+fetchData()
         }
+    
+    func fetchData(){
+                
+                
+              //  fetch user details
+                let userID = Auth.auth().currentUser?.uid
+                    Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                        // Get user details
+                        let value = snapshot.value as? NSDictionary
+        
+                        let name = value?["fullName"] as? String ?? ""
+                        print(name)
+                        let address = value?["address"] as? String ?? ""
+                        print(address)
+                        let temparature = value?["bodyTemp"] as! Int
+                        print(temparature)
+                        let survey = value?["surveyScore"] as! Int
+                        print(survey)
+        
+                        let profilePic = value?["profilePicURL"] as? String ?? ""
+                        print(profilePic)
+                        let index = value?["index"] as? String ?? ""
+                        print(index)
+        
+        
+                        let temp = String(temparature)
+        
+                        self.nameLabel.text = name
+        
+                        self.addressLabel.text = "at \(address)"
+                      self.tempLabel.text = temp+"'C"
+                        self.fullNameTextField.text = name
+                        self.indexTextField.text = index
+                        self.countryDropDown.text = address
+        
+        
+                        let imageUrl = URL(string: profilePic)
+        
+                        if imageUrl == nil
+                        {
+                            self.profileImageView.image =  #imageLiteral(resourceName: "patient")
+                        }
+                        else {
+        
+                        let imageData = try! Data(contentsOf: imageUrl!)
+                        let image = UIImage(data: imageData)
+        
+                        self.profileImageView.image = image!
+        
+                        }
+                        // ...
+                    }) { (error) in
+                        print("Name not found")
+                    }
+    }
         
         
     func uploadProfilePic() {
@@ -369,8 +383,8 @@ LoadUI()
            
            let values = [
                "fullName": name,
-               "indexOrEmployeeCode": index,
-               "country": country
+               "index": index,
+               "address": country
                ] as [String : Any]
            
            Database.database().reference().child("users").child(userID).updateChildValues(values) { (error, ref) in

@@ -51,11 +51,10 @@ class SurveyResultViewController: UIViewController {
         
         @objc func btnRestartAction() {
             let vc = MainTabBarController()
-            //self.navigationController?.pushViewController(vc, animated: true)
-           // vc.hidesBottomBarWhenPushed = true
-                 //  self.navigationController?.pushViewController(vc, animated: true)
-            vc.modalPresentationStyle = .fullScreen
-            present(vc,animated: true,completion: {})
+           
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+          //  vc.dismiss(animated: true, completion: nil)
             
         }
     
@@ -95,27 +94,18 @@ class SurveyResultViewController: UIViewController {
             self.view.addSubview(lblScore)
             lblScore.anchor(top: lblTitle.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20,  paddingRight: 20)
             
-//            lblScore.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 0).isActive=true
-//            lblScore.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-//            lblScore.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//            lblScore.heightAnchor.constraint(equalToConstant: 60).isActive=true
+
             lblScore.text = "\(score!) / \(totalScore!)"
             lblScore.textColor = .black
             
             self.view.addSubview(lblRating)
             lblRating.anchor(top: lblScore.bottomAnchor, paddingTop: 50, width: 300)
             lblRating.centerX(inView: self.view)
-//            lblRating.topAnchor.constraint(equalTo: lblScore.bottomAnchor, constant: 40).isActive=true
-//            lblRating.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-//            lblRating.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//            lblRating.heightAnchor.constraint(equalToConstant: 60).isActive=true
+
             showRating()
             
             self.view.addSubview(btnRestart)
-//            btnRestart.topAnchor.constraint(equalTo: lblRating.bottomAnchor, constant: 40).isActive=true
-//            btnRestart.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-//            btnRestart.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//            btnRestart.heightAnchor.constraint(equalToConstant: 50).isActive=true
+
             btnRestart.anchor(top: lblRating.bottomAnchor, paddingTop: 40, height: 50, width: 150)
             btnRestart.centerX(inView: view)
             btnRestart.addTarget(self, action: #selector(btnRestartAction), for: .touchUpInside)

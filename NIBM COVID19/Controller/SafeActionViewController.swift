@@ -72,23 +72,13 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    //   setQuestionNumber()
-    }
+        }
     
-//    func setQuestionNumber() {
-//        let x = myCollectionView.contentOffset.x
-//        let w = myCollectionView.bounds.size.width
-//        let currentPage = Int(ceil(x/w))
-//        if currentPage < questionsArray.count {
-//          //  lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
-//          //  currentQuestionNumber = currentPage + 1
-//        }
-//    }
+
     @objc func navToHome(){
-        let vc = MainTabBarController()
-                 //  self.navigationController?.pushViewController(vc, animated: true)
-        vc.modalPresentationStyle = .fullScreen
-        present(vc,animated: true,completion: {})
+       let vc = MainTabBarController()
+                  self.navigationController?.pushViewController(vc, animated: true)
+       
     }
     
     @objc func popAlert(){
@@ -135,10 +125,7 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
        
     
     func setupViews() {
-//        myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
-//        myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-//        myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-//        myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
+
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, height: 38, width: 38)
         
@@ -146,28 +133,16 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         myCollectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
         self.view.addSubview(btnPrev)
-//        btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
-      
-//        btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-//        btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+
         
         btnPrev.anchor( left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingLeft: 20,paddingBottom: 40, height: 50,width: 100)
         // btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
         
         self.view.addSubview(btnNext)
-//        btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
-      
-//        btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-//        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+
         btnNext.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 40,paddingRight: 20,  height: 50,width: 100)
       //   btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
-        
-//        self.view.addSubview(lblQueNumber)
-//        lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
-//        lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//        lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
-//        lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
-//        lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
+
         
 
     }
@@ -184,8 +159,7 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     let btnPrev: UIButton = {
         let btn=UIButton()
         btn.setTitle("PREVIOUS", for: .normal)
-       // btn.setTitleColor(UIColor.white, for: .normal)
-       // btn.backgroundColor=UIColor.orange
+     
         btn.setTitleColor(UIColor.systemBlue, for: .normal)
         btn.backgroundColor=UIColor.systemGray6
         btn.layer.borderColor = UIColor.systemGray6.cgColor
@@ -207,40 +181,12 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         return btn
     }()
     
-//    let lblQueNumber: UILabel = {
-//        let lbl=UILabel()
-//        lbl.text="0 / 0"
-//        lbl.textColor=UIColor.gray
-//        lbl.textAlignment = .left
-//        lbl.font = UIFont.systemFont(ofSize: 16)
-//        lbl.translatesAutoresizingMaskIntoConstraints=false
-//        return lbl
-//    }()
-    
-//    let lblScore: UILabel = {
-//        let lbl=UILabel()
-//        lbl.text="0 / 0"
-//        lbl.textColor=UIColor.gray
-//        lbl.textAlignment = .right
-//        lbl.font = UIFont.systemFont(ofSize: 16)
-//        lbl.translatesAutoresizingMaskIntoConstraints=false
-//        return lbl
-//    }()
+
 }
 
 extension SafeActionViewController: SafeActionCollectionViewCellDelegate {
     func didChooseAnswer(btnIndex: Int) {
-//        let centerIndex = getCenterIndex()
-//        guard let index = centerIndex else { return }
-//        questionsArray[index.item].isAnswered=true
-//        if questionsArray[index.item].correctAns != btnIndex {
-//            questionsArray[index.item].wrongAns = btnIndex
-//            score -= 1
-//        } else {
-//            score += 1
-//        }
-//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
-//        myCollectionView.reloadItems(at: [index])
+
     }
     
     func getCenterIndex() -> IndexPath? {

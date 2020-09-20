@@ -30,8 +30,7 @@ var btn1: UIButton!
             lblQue.text = unwrappedQue.questionText
             btn1.setTitle(unwrappedQue.options[0], for: .normal)
             btn2.setTitle(unwrappedQue.options[1], for: .normal)
-//            btn3.setTitle(unwrappedQue.options[2], for: .normal)
-//            btn4.setTitle(unwrappedQue.options[3], for: .normal)
+
             
             if unwrappedQue.isAnswered {
                 btnsArray[unwrappedQue.correctAns].backgroundColor=UIColor.green
@@ -59,8 +58,7 @@ var btn1: UIButton!
     override func prepareForReuse() {
         btn1.backgroundColor=UIColor.systemBlue
         btn2.backgroundColor=UIColor.systemBlue
-//        btn3.backgroundColor=UIColor.white
-//        btn4.backgroundColor=UIColor.white
+
     }
     
     
@@ -69,34 +67,21 @@ var btn1: UIButton!
         
         
         backgroundColor = .systemGray6
-//        addSubview(imgView)
-//        imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
-//        imgView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive=true
-//        imgView.widthAnchor.constraint(equalToConstant: 150).isActive=true
-//        imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive=true
+
 //
         addSubview(lblQue)
-      //  lblQue.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive=true
-//        lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
-//        lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
-//        lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
+  
         
         lblQue.anchor(top:self.safeAreaLayoutGuide.topAnchor,   paddingTop: 200)
         lblQue.centerX(inView: self)
         
-//        let btnWidth: CGFloat = 150
-//        let btnHeight: CGFloat = 50
+
         btn1 = getButton(tag: 0)
-      //  addSubview(btn1)
-//        NSLayoutConstraint.activate([btn1.topAnchor.constraint(equalTo: lblQue.bottomAnchor, constant: 20), btn1.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn1.widthAnchor.constraint(equalToConstant: btnWidth), btn1.heightAnchor.constraint(equalToConstant: btnHeight)])
-        
-      //  btn1.anchor(top: lblQue.bottomAnchor, left: self.leftAnchor, paddingTop: 20, paddingLeft: 20,   height: 50, width: 150)
+  
         btn1.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         btn2 = getButton(tag: 1)
-      //  addSubview(btn2)
-//        NSLayoutConstraint.activate([btn2.topAnchor.constraint(equalTo: btn1.topAnchor), btn2.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: 10), btn2.widthAnchor.constraint(equalToConstant: btnWidth), btn2.heightAnchor.constraint(equalToConstant: btnHeight)])
-      //  btn2.anchor(top: lblQue.bottomAnchor, right: self.rightAnchor, paddingTop: 20,   paddingRight: -20, height: 50, width: 150)
+
         btn2.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         
@@ -109,15 +94,7 @@ var btn1: UIButton!
         btnStack.anchor(top: lblQue.bottomAnchor,  paddingTop: 50,height: 50, width: 300)
         btnStack.centerX(inView: self)
         
-//        btn3 = getButton(tag: 2)
-//        addSubview(btn3)
-//        NSLayoutConstraint.activate([btn3.topAnchor.constraint(equalTo: btn1.bottomAnchor, constant: 20), btn3.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn3.widthAnchor.constraint(equalToConstant: btnWidth), btn3.heightAnchor.constraint(equalToConstant: btnHeight)])
-//        btn3.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
-        
-//        btn4 = getButton(tag: 3)
-//        addSubview(btn4)
-//        NSLayoutConstraint.activate([btn4.topAnchor.constraint(equalTo: btn3.topAnchor), btn4.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: 10), btn4.widthAnchor.constraint(equalToConstant: btnWidth), btn4.heightAnchor.constraint(equalToConstant: btnHeight)])
-//        btn4.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
+
     }
     
     func getButton(tag: Int) -> UIButton {
@@ -136,13 +113,7 @@ var btn1: UIButton!
         return btn
     }
     
-//    let imgView: UIImageView = {
-//        let v=UIImageView()
-//        v.image = #imageLiteral(resourceName: "img2")
-//        v.contentMode = .scaleAspectFit
-//        v.translatesAutoresizingMaskIntoConstraints=false
-//        return v
-//    }()
+
     
     let lblQue: UILabel = {
         let lbl=UILabel()

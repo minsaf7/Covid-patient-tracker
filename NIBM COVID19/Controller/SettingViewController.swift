@@ -169,10 +169,14 @@ class SettingViewController: UIViewController {
     //MARK: - API
     
     @objc func showProfile(){
+        
+        checkIsUserLoggedIn()
+         
         let vc = ProfileViewController()
                vc.hidesBottomBarWhenPushed = true
              //  self.navigationController?.pushViewController(vc, animated: true)
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
@@ -195,5 +199,29 @@ class SettingViewController: UIViewController {
                       print("DEBUG: sign out error")
                   }
               }
+    
+    
+    func checkIsUserLoggedIn() {
+                        if(Auth.auth().currentUser?.uid == nil) {
+            
+                            DispatchQueue.main.async {
+                                                              let nav = LoginViewController()
+                                  self.navigationController?.pushViewController(nav, animated: true)
+    //                                                          nav.modalPresentationStyle = .fullScreen
+    //                                                          self.present(nav, animated: true, completion: nil)
+                                                          }
+            
+            
+            
+            
+            
+                        } else {
+                            print("DEBUG: User is logged in..")
+                             configureUI()
+                         
+                            
+                        }
+                    }
+
 
 }
