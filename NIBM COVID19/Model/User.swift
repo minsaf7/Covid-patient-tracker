@@ -8,10 +8,10 @@
 
 import CoreLocation
 
-enum AccountType: Int {
-    case Student
-    case Staff
-}
+//enum AccountType: Int {
+//    case Student
+//    case Staff
+//}
 
 
    struct User {
@@ -23,6 +23,7 @@ enum AccountType: Int {
         let uid: String
         let temperature: Int
     let surveyScore: Int
+    let accountType: Int
 //        var result: Int?
         
         init(uid: String, dictionary: [String: Any]) {
@@ -32,6 +33,7 @@ enum AccountType: Int {
             self.email = dictionary["email"] as? String ?? ""
             self.temperature = dictionary["bodyTemp"] as? Int ?? 0
             self.surveyScore = dictionary["surveyScore"] as? Int ?? 0
+            self.accountType = dictionary["accountType"] as? Int ?? 0
          //   self.role = dictionary["role"] as? String ?? ""
 //            self.temperature = dictionary["temperature"] as? String ?? "0"
 //            self.result = dictionary["score"] as? Int ?? 0

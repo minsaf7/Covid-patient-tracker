@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
         return button
     }()
         
-        private let nameLabel: UILabel = {
+        private let nameLbl: UILabel = {
             
             let label = UILabel()
             label.text = "User Name"
@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController {
             
         }()
         
-        private let ActiveLabel: UILabel = {
+        private let statusLbl: UILabel = {
             
             let label = UILabel()
             label.text = "Active user since August 2020"
@@ -162,7 +162,7 @@ class ProfileViewController: UIViewController {
             return index
         }()
         
-        private let countryDropDown: UITextField = {
+        private let countryTxt: UITextField = {
             
             let con = UITextField()
             con.borderStyle = .roundedRect
@@ -212,46 +212,45 @@ LoadUI()
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 16, height: 38, width: 38)
            
            view.addSubview(titleLabel)
-//           titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//           titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//           titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 5)
         titleLabel.centerX(inView: view)
            
        //    view.addSubview(BackButton)
          //  BackButton.anchor(top: view.safeAreaLayoutGuide.topAnchor,left: view.leftAnchor, paddingTop: 5, paddingLeft: 15, width: 30, height: 25)
            
-           view.addSubview(nameLabel)
-           nameLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 40)
-        nameLabel.centerX(inView: view)
+           view.addSubview(nameLbl)
+           nameLbl.anchor(top: titleLabel.bottomAnchor, paddingTop: 40)
+        nameLbl.centerX(inView: view)
            
            view.addSubview(profileImageView)
-           profileImageView.anchor(top: nameLabel.bottomAnchor, paddingTop: 25, height: 90,width: 90)
+           profileImageView.anchor(top: nameLbl.bottomAnchor, paddingTop: 25, height: 90,width: 90)
         profileImageView.centerX(inView: view)
            
            view.addSubview(updatePic)
            updatePic.anchor(top: profileImageView.bottomAnchor, paddingTop: 8)
         updatePic.centerX(inView: view)
            
-           view.addSubview(ActiveLabel)
-           ActiveLabel.anchor(top: updatePic.bottomAnchor,  paddingTop: 15)
-        ActiveLabel.centerX(inView: view)
+           view.addSubview(statusLbl)
+           statusLbl.anchor(top: updatePic.bottomAnchor,  paddingTop: 15)
+        statusLbl.centerX(inView: view)
            
            view.addSubview(addressLabel)
-           addressLabel.anchor(top: ActiveLabel.bottomAnchor,paddingTop: 5)
+           addressLabel.anchor(top: statusLbl.bottomAnchor,paddingTop: 5)
         addressLabel.centerX(inView: view)
            
            view.addSubview(tempLabel)
            tempLabel.anchor(top: addressLabel.bottomAnchor, paddingTop: 5)
         tempLabel.centerX(inView: view)
            
-           let stack = UIStackView(arrangedSubviews: [fullNameTextField,indexTextField,countryDropDown])
+           let stack = UIStackView(arrangedSubviews: [fullNameTextField,indexTextField,countryTxt])
            stack.axis = .vertical
            stack.distribution = .fillEqually
            stack.spacing = 24
            
            view.addSubview(stack)
-           stack.anchor(top: tempLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 14)
+           stack.anchor(top: tempLabel.bottomAnchor, paddingTop: 40, width: 350)
+        stack.centerX(inView: view)
        
            view.addSubview(updateButton)
          //  updateButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor)
@@ -270,30 +269,30 @@ fetchData()
                         // Get user details
                         let value = snapshot.value as? NSDictionary
         
-                        let name = value?["fullName"] as? String ?? ""
+                        let name = value?["fullName"] as? String ?? " "
                         print(name)
-                        let address = value?["address"] as? String ?? ""
+                        let address = value?["address"] as? String ?? " "
                         print(address)
                         let temparature = value?["bodyTemp"] as! Int
                         print(temparature)
                         let survey = value?["surveyScore"] as! Int
                         print(survey)
         
-                        let profilePic = value?["profilePicURL"] as? String ?? ""
+                        let profilePic = value?["profilePicURL"] as? String ?? " "
                         print(profilePic)
-                        let index = value?["index"] as? String ?? ""
+                        let index = value?["index"] as? String ?? " "
                         print(index)
         
         
                         let temp = String(temparature)
         
-                        self.nameLabel.text = name
+                        self.nameLbl.text = name
         
                         self.addressLabel.text = "at \(address)"
                       self.tempLabel.text = temp+"'C"
                         self.fullNameTextField.text = name
                         self.indexTextField.text = index
-                        self.countryDropDown.text = address
+                        self.countryTxt.text = address
         
         
                         let imageUrl = URL(string: profilePic)
@@ -379,7 +378,7 @@ fetchData()
            
            guard let name = fullNameTextField.text else { return }
            guard let index = indexTextField.text else { return }
-           guard let country = countryDropDown.text else { return }
+           guard let country = countryTxt.text else { return }
            
            let values = [
                "fullName": name,

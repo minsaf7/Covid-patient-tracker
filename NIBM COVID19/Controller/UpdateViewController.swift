@@ -192,6 +192,9 @@ class UpdateViewController: UIViewController {
     //MARK: - Selector
     
     @objc func navToNotification(){
+        
+        
+        
         let vc = PostNotificationViewController()
                vc.hidesBottomBarWhenPushed = true
                self.navigationController?.pushViewController(vc, animated: true)
@@ -215,6 +218,15 @@ class UpdateViewController: UIViewController {
         
     }
     //MARK: - API
+    
+    
+    private var user: User? {
+        didSet {
+            lblTemperature.text = "\(user!.temperature)°C"
+        }
+    }
+    
+    
     
     
    @objc func submitTemp(){

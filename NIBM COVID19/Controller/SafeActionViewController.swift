@@ -20,8 +20,8 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     
     var myCollectionView: UICollectionView!
     var actionArray = [safeAction]()
-    var score: Int = 0
-    var currentQuestionNumber = 1
+   // var score: Int = 0
+    var currentActionNumber = 1
     
     var window: UIWindow?
     
@@ -88,7 +88,7 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
     }
     
     @objc func btnPrevNextAction(sender: UIButton) {
-        if sender == btnNext && currentQuestionNumber == actionArray.count {
+        if sender == btnNext && currentActionNumber == actionArray.count {
           popAlert()
             return
         }
@@ -97,10 +97,10 @@ class SafeActionViewController:UIViewController, UICollectionViewDelegate, UICol
         var contentOffset: CGFloat = 0
         if sender == btnNext {
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
-           currentQuestionNumber += currentQuestionNumber >= actionArray.count ? 0 : 1
+           currentActionNumber += currentActionNumber >= actionArray.count ? 0 : 1
         } else {
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x - collectionBounds.size.width))
-        currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1
+        currentActionNumber -= currentActionNumber <= 0 ? 0 : 1
         }
         self.moveToFrame(contentOffset: contentOffset)
       // lblQueNumber.text = "Question: \(currentQuestionNumber) / \(questionsArray.count)"

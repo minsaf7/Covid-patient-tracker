@@ -68,68 +68,68 @@ class HomeViewController: UIViewController {
            return containerView
        }()
        
-    private let notificTile: UIButton = {
-           let tile = UIButton()
-           tile.backgroundColor = .white
-           tile.layer.cornerRadius = 5
-           tile.layer.masksToBounds = true
+    private let notificTab: UIButton = {
+           let notificBtn = UIButton()
+           notificBtn.backgroundColor = .white
+           notificBtn.layer.cornerRadius = 5
+           notificBtn.layer.masksToBounds = true
            
            let bell = UIImageView()
            bell.image = UIImage(systemName: "bell")
            bell.tintColor = .systemYellow
-           tile.addSubview(bell)
+           notificBtn.addSubview(bell)
          //  bell.anchor(left: tile.leftAnchor, paddingLeft: 20, width: 32, height: 32)
-        bell.anchor( left: tile.leftAnchor,  paddingLeft: 20, height: 32, width: 32)
-           bell.centerY(inView: tile)
+        bell.anchor( left: notificBtn.leftAnchor,  paddingLeft: 20, height: 32, width: 32)
+           bell.centerY(inView: notificBtn)
            
            let arrow = UIImageView()
            arrow.image = UIImage(systemName: "chevron.right")
            arrow.tintColor = .darkGray
            arrow.layer.masksToBounds = true
-           tile.addSubview(arrow)
+           notificBtn.addSubview(arrow)
           // arrow.anchor(right: tile.rightAnchor, paddingRight: 20, width: 14, height: 26)
-        arrow.anchor( right: tile.rightAnchor,  paddingRight: 20, height: 26, width: 14)
-           arrow.centerY(inView: tile)
+        arrow.anchor( right: notificBtn.rightAnchor,  paddingRight: 20, height: 26, width: 14)
+           arrow.centerY(inView: notificBtn)
            
            let title = UILabel()
            title.text = "NIBM is closed until further notice"
-           tile.addSubview(title)
-           title.anchor(top: tile.topAnchor,  left: bell.rightAnchor, right: arrow.leftAnchor, paddingTop: 15, paddingLeft: 12, paddingRight: 12)
+           notificBtn.addSubview(title)
+           title.anchor(top: notificBtn.topAnchor,  left: bell.rightAnchor, right: arrow.leftAnchor, paddingTop: 15, paddingLeft: 12, paddingRight: 12)
            
            let description = UILabel()
-           description.text = "Get quick update about lecture schedule stay tune with LMS"
+           description.text = "Get in touch with the lecturers to get further details"
            description.font = UIFont(name: "Avenir-Medium", size: 12)
            description.textColor = .darkGray
            description.numberOfLines = 2
-           tile.addSubview(description)
+           notificBtn.addSubview(description)
            description.anchor(top: title.bottomAnchor,  left: bell.rightAnchor, right: arrow.leftAnchor, paddingLeft: 12, paddingRight: 12)
            
-         tile.addTarget(self, action: #selector(showNotific), for: .touchUpInside)
-           return tile
+         notificBtn.addTarget(self, action: #selector(showNotific), for: .touchUpInside)
+           return notificBtn
        }()
        
-       private let caseTile: UIView = {
-           let tile = UIView()
-           tile.backgroundColor = .white
+       private let caseTab: UIView = {
+           let covidTab = UIView()
+           covidTab.backgroundColor = .white
            
            let title = UILabel()
            title.text = "University Case Update"
-           tile.addSubview(title)
-           title.anchor(top: tile.topAnchor, left: tile.leftAnchor, paddingTop: 20, paddingLeft: 16)
+           covidTab.addSubview(title)
+           title.anchor(top: covidTab.topAnchor, left: covidTab.leftAnchor, paddingTop: 20, paddingLeft: 16)
            
            let moreBtn = UIButton()
            moreBtn.setTitle("See More", for: .normal)
            moreBtn.setTitleColor(.systemBlue, for: .normal)
            moreBtn.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
-           tile.addSubview(moreBtn)
-           moreBtn.anchor(top: tile.topAnchor, right: tile.rightAnchor, paddingTop: 14, paddingRight: 16)
+           covidTab.addSubview(moreBtn)
+           moreBtn.anchor(top: covidTab.topAnchor, right: covidTab.rightAnchor, paddingTop: 14, paddingRight: 16)
            
            let timeAgo = UILabel()
            timeAgo.text = "1 minute ago"
            timeAgo.font = UIFont(name: "Avenir-Medium", size: 11)
            timeAgo.textColor = .darkGray
-           tile.addSubview(timeAgo)
-           timeAgo.anchor(top: title.bottomAnchor, left: tile.leftAnchor, paddingLeft: 16)
+           covidTab.addSubview(timeAgo)
+           timeAgo.anchor(top: title.bottomAnchor, left: covidTab.leftAnchor, paddingLeft: 16)
            
            let infectedUI = UIView()
            
@@ -207,16 +207,16 @@ class HomeViewController: UIViewController {
            countStack.axis = .horizontal
            countStack.distribution = .fillEqually
            countStack.spacing = 0
-           tile.addSubview(countStack)
-           countStack.anchor(top: timeAgo.bottomAnchor, left: tile.leftAnchor, bottom: tile.bottomAnchor, right: tile.rightAnchor)
+           covidTab.addSubview(countStack)
+           countStack.anchor(top: timeAgo.bottomAnchor, left: covidTab.leftAnchor, bottom: covidTab.bottomAnchor, right: covidTab.rightAnchor)
            
-           return tile
+           return covidTab
        }()
        
-       private let mapTile: UIView = {
-           let tile = UIView()
+       private let mapTab: UIView = {
+           let map = UIView()
            //tile.backgroundColor = .red
-           return tile
+           return map
        }()
     
     private var user: User? {
@@ -320,13 +320,13 @@ class HomeViewController: UIViewController {
                view.addSubview(topViewContainer)
         topViewContainer.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 30 * view.bounds.height/100)
         
-        view.addSubview(notificTile)
+        view.addSubview(notificTab)
        // notificTile.anchor(top: mainTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingRight: 16, height: 80)
-        notificTile.anchor(top: topViewContainer.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingRight: 16, height: 80)
-        view.addSubview(caseTile)
-        caseTile.anchor(top: notificTile.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, height: 25 * view.bounds.height/100)
-        view.addSubview(mapTile)
-        mapTile.anchor(top: caseTile.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+        notificTab.anchor(top: topViewContainer.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingRight: 16, height: 80)
+        view.addSubview(caseTab)
+        caseTab.anchor(top: notificTab.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, height: 25 * view.bounds.height/100)
+        view.addSubview(mapTab)
+        mapTab.anchor(top: caseTab.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
      setMap()
 
@@ -337,7 +337,7 @@ class HomeViewController: UIViewController {
 
     func setMap(){
 
-       mapTile.addSubview(userMap)
+       mapTab.addSubview(userMap)
                userMap.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 220)
                //mapView.frame = view.frame
                print(userMap.bounds.height)
@@ -357,8 +357,31 @@ class HomeViewController: UIViewController {
    
 
      // MARK: - Selectors
+    
+    
+    func checkIsUserLoggedIn() {
+                           if(Auth.auth().currentUser?.uid == nil) {
+               
+                              let popAlert = UIAlertController(title: "Please sign in", message: "Guest users cannot view notifications", preferredStyle: .alert)
+                                         popAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                                        self.present(popAlert, animated: true)
+               
+               
+               
+               
+               
+                           } else {
+                               print("DEBUG: User is logged in..")
+                               
+                           }
+                       }
+    
+    
+    
+    
         
         @objc func showNotific() {
+            checkIsUserLoggedIn()
             print("notific")
       let vc = NotificTableViewViewController()
             vc.hidesBottomBarWhenPushed = true

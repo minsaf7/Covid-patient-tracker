@@ -16,8 +16,8 @@ protocol SafeActionCollectionViewCellDelegate: class {
 
 class SafeActionCollectionViewCell: UICollectionViewCell {
     
-    var btn1: UIButton!
-    var btn2: UIButton!
+  //  var btn1: UIButton!
+  //  var btn2: UIButton!
   // var btnsArray = [UIButton]()
     
     weak var delegate: SafeActionCollectionViewCellDelegate?
