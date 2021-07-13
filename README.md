@@ -3,8 +3,21 @@
  
  structured the app 
  
- <p><a href=" https://drive.google.com/file/d/1N3LOBtnZyGrPXV38u9SBzqKyKPFtk0mS/view?usp=sharing
-">DEMO Video</a></p>
+ 
+
+
+<table style="width:100%">
+  <tr>
+    <th>
+      DEMO Video
+    </th>
+    <th>
+     https://drive.google.com/file/d/1N3LOBtnZyGrPXV38u9SBzqKyKPFtk0mS/view?usp=sharing"
+    </th> 
+</table>
+
+
+
  
 
 
